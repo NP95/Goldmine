@@ -91,7 +91,7 @@ GoldMine Configuration File goldmine.cfg explanation
 
 How to use Docker container (Preferred method):
 
-    git clone https://debjitp@bitbucket.org/debjitp/goldmine.git -b dev_pathgoldmine
+    git clone https://debjitp@bitbucket.org/debjitp/goldminer.git
     cd goldmine
     mkdir -pv RunTime
     cd RunTime
