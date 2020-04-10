@@ -1,0 +1,17 @@
+instr_rdata_i	decoder_i.instr_rdata_i
+registers_i.rdata_b_o	regfile_rdata_b
+registers_i.rf_reg_tmp	registers_i.rf_reg
+registers_i.DataWidth	registers_i.rf_reg
+registers_i.DataWidth	registers_i.rdata_b_o
+decoder_i.instr	decoder_i.regfile_raddr_b_o
+registers_i.raddr_b_i	registers_i.rdata_b_o
+decoder_i.instr_rdata_i	decoder_i.instr
+registers_i.NUM_WORDS	registers_i.rf_reg
+registers_i.NUM_WORDS	registers_i.rdata_b_o
+[1]registers_i.NUM_WORDS	registers_i.rf_reg_tmp
+regfile_rdata_b	rfvi_reg_rdata_rb_o
+[1]rst_ni	[1]registers_i.rst_ni
+decoder_i.regfile_raddr_b_o	regfile_raddr_b
+[1]registers_i.rst_ni	registers_i.rf_reg_tmp
+registers_i.rf_reg	registers_i.rdata_b_o
+regfile_raddr_b	registers_i.raddr_b_i

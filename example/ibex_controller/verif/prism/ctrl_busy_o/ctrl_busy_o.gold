@@ -1,0 +1,181 @@
+Report file generated at: Mar-14-2020 11:31:16 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a13: (store_err_i == 0) |=> ##2 (ctrl_busy_o == 1)
+IRank: : 0.06552
+Importance: : 5.11095
+Complexity: : 78
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a9: (illegal_umode == 1) |=> ##2 (ctrl_busy_o == 1)
+IRank: : 0.05837
+Importance: : 5.13632
+Complexity: : 88
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (wfi_insn == 1) |=> ##2 (ctrl_busy_o == 1)
+IRank: : 0.05472
+Importance: : 5.14399
+Complexity: : 94
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a11: (exc_req_q == 1) |=> (ctrl_busy_o == 1)
+IRank: : 0.05062
+Importance: : 0.30373
+Complexity: : 6
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a16: (illegal_insn_q == 1 & csr_pipe_flush_i == 1) ##1 (stall == 0 & exc_req_lsu == 0 & csr_pipe_flush == 1) ##2 (instr_fetch_err == 1) |=> (ctrl_busy_o == 0)
+IRank: : 0.04001
+Importance: : 11.8824
+Complexity: : 297
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a8: (load_err_d == 1) |=> ##1 (ctrl_busy_o == 1)
+IRank: : 0.0388
+Importance: : 0.31037
+Complexity: : 8
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (special_req == 0) |=> (ctrl_busy_o == 1)
+IRank: : 0.03793
+Importance: : 0.37932
+Complexity: : 10
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (csr_pipe_flush == 0) |=> ##1 (ctrl_busy_o == 1)
+IRank: : 0.03406
+Importance: : 1.56676
+Complexity: : 46
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a10: (stall_branch_i == 1) |=> ##1 (ctrl_busy_o == 1)
+IRank: : 0.034
+Importance: : 1.56394
+Complexity: : 46
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a14: (store_err_i == 1) |=> ##1 (ctrl_busy_o == 1)
+IRank: : 0.03207
+Importance: : 1.57159
+Complexity: : 49
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a12: (debug_req_i == 1) |=> (ctrl_busy_o == 1)
+IRank: : 0.02919
+Importance: : 0.49619
+Complexity: : 17
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a15: (csr_pipe_flush == 1) ##1 (stall == 0 & ctrl_fsm_ns[0] == 0 & ctrl_fsm_cs[0] == 0) |=> (ctrl_busy_o == 0)
+IRank: : 0.02731
+Importance: : 2.48481
+Complexity: : 91
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (fetch_enable_i == 0) |=> ##2 (ctrl_busy_o == 1)
+IRank: : 0.02704
+Importance: : 1.67659
+Complexity: : 62
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a7: (instr_valid_i == 0) |=> (ctrl_busy_o == 1)
+IRank: : 0.01492
+Importance: : 0.40292
+Complexity: : 27
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a5: (ctrl_fsm_cs[0] == 1) |=> (ctrl_busy_o == 1)
+IRank: : 0.01468
+Importance: : 0.44034
+Complexity: : 30
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a6: (ctrl_fsm_cs[1] == 0) |=> (ctrl_busy_o == 1)
+IRank: : 0.01468
+Importance: : 0.44034
+Complexity: : 30
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (debug_mode_d == 0) |=> (ctrl_busy_o == 1)
+IRank: : 0.00323
+Importance: : 0.02264
+Complexity: : 7
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a13       | 0.06552 |  5.11095   |     78     |  Unknown  | Unknown |   Unknown   
+      a9        | 0.05837 |  5.13632   |     88     |  Unknown  | Unknown |   Unknown   
+      a1        | 0.05472 |  5.14399   |     94     |  Unknown  | Unknown |   Unknown   
+      a11       | 0.05062 |  0.30373   |     6      |  Unknown  | Unknown |   Unknown   
+      a16       | 0.04001 |  11.8824   |    297     |  Unknown  | Unknown |   Unknown   
+      a8        | 0.0388  |  0.31037   |     8      |  Unknown  | Unknown |   Unknown   
+      a0        | 0.03793 |  0.37932   |     10     |  Unknown  | Unknown |   Unknown   
+      a4        | 0.03406 |  1.56676   |     46     |  Unknown  | Unknown |   Unknown   
+      a10       |  0.034  |  1.56394   |     46     |  Unknown  | Unknown |   Unknown   
+      a14       | 0.03207 |  1.57159   |     49     |  Unknown  | Unknown |   Unknown   
+      a12       | 0.02919 |  0.49619   |     17     |  Unknown  | Unknown |   Unknown   
+      a15       | 0.02731 |  2.48481   |     91     |  Unknown  | Unknown |   Unknown   
+      a2        | 0.02704 |  1.67659   |     62     |  Unknown  | Unknown |   Unknown   
+      a7        | 0.01492 |  0.40292   |     27     |  Unknown  | Unknown |   Unknown   
+      a5        | 0.01468 |  0.44034   |     30     |  Unknown  | Unknown |   Unknown   
+      a6        | 0.01468 |  0.44034   |     30     |  Unknown  | Unknown |   Unknown   
+      a3        | 0.00323 |  0.02264   |     7      |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 17
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 17
+Hit rate: 0.0
+Miss rate: 1.0

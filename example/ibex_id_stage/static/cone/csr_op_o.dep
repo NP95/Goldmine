@@ -1,0 +1,16 @@
+decoder_i.CSR_OP_CLEAR	decoder_i.csr_op_o
+decoder_i.CSR_OP_CLEAR	decoder_i.csr_op
+instr_rdata_i	decoder_i.instr_rdata_i
+decoder_i.CSR_OP_READ	decoder_i.csr_op_o
+decoder_i.CSR_OP_READ	decoder_i.csr_op
+decoder_i.CSR_OP_SET	decoder_i.csr_op_o
+decoder_i.CSR_OP_SET	decoder_i.csr_op
+decoder_i.csr_op_o	csr_op_o
+decoder_i.opcode	decoder_i.csr_op
+decoder_i.CSR_OP_WRITE	decoder_i.csr_op
+decoder_i.instr	decoder_i.csr_op_o
+decoder_i.instr	decoder_i.csr_op
+decoder_i.instr	decoder_i.opcode
+decoder_i.csr_op	decoder_i.csr_op_o
+decoder_i.instr_rdata_i	decoder_i.instr
+decoder_i.sv2v_cast_DB892	decoder_i.opcode

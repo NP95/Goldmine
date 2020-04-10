@@ -1,0 +1,4 @@
+../verilog/IBex/ibex_id_stage.v
+../verilog/IBex/ibex_decoder.v
+../verilog/IBex/ibex_controller.v
+../verilog/IBex/ibex_register_file_ff.v

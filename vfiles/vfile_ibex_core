@@ -1,0 +1,42 @@
+######## Files from the top level module
+../verilog/IBex/ibex_core.v
+# IF Stage: OK
+../verilog/IBex/ibex_if_stage.v
+# ID Stage: OK
+../verilog/IBex/ibex_id_stage.v
+# Ex Block: OK
+../verilog/IBex/ibex_ex_block.v
+# Load Store Unit: OK
+../verilog/IBex/ibex_load_store_unit.v
+# CS_Registers: OK
+../verilog/IBex/ibex_cs_registers.v
+
+######## Files from the below hierarchy
+# Prefetch buffer: OK
+../verilog/IBex/ibex_prefetch_buffer.v
+# Register File: OK
+../verilog/IBex/ibex_register_file_ff.v
+# Compressed Decoder: OK
+../verilog/IBex/ibex_compressed_decoder.v
+# MULTDIV_FAST: OK
+../verilog/IBex/ibex_multdiv_fast.v
+
+# MULTDIV_SLOW: OK
+#../verilog/IBex/ibex_multdiv_slow.v
+
+# Controller: OK
+../verilog/IBex/ibex_controller.v
+# Decoder: OK
+../verilog/IBex/ibex_decoder.v
+# ALU: OK
+../verilog/IBex/ibex_alu.v
+# PMP: OK
+../verilog/IBex/ibex_pmp.v
+# Fetch FIFO: OK
+../verilog/IBex/ibex_fetch_fifo.v
+# Prim Clock Gating: OK
+../verilog/IBex/shared/prim_clock_gating.v
+
+######## List of files not needed for IBex_Core:
+# 1. ibex_core_tracing
+

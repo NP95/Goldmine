@@ -1,0 +1,8 @@
+instr_rdata_i	decoder_i.instr_rdata_i
+multdiv_signed_mode	multdiv_signed_mode_ex_o
+decoder_i.opcode	decoder_i.multdiv_signed_mode_o
+decoder_i.instr	decoder_i.opcode
+decoder_i.instr	decoder_i.multdiv_signed_mode_o
+decoder_i.multdiv_signed_mode_o	multdiv_signed_mode
+decoder_i.instr_rdata_i	decoder_i.instr
+decoder_i.sv2v_cast_DB892	decoder_i.opcode

@@ -1,0 +1,649 @@
+Report file generated at: Mar-14-2020 10:25:04 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a0: (special_req == 0) |=> (csr_save_id_o == 0)
+IRank: : 0.06235
+Importance: : 0.62349
+Complexity: : 10
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a30: (ctrl_fsm_ns[1] == 1 & stall == 0) ##1 (instr_valid_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.0435
+Importance: : 0.82647
+Complexity: : 19
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a31: (special_req == 0) ##2 (ctrl_fsm_ns[1] == 1) ##3 (instr_valid_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.04317
+Importance: : 2.71958
+Complexity: : 63
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a40: (special_req == 0) ##2 (ctrl_fsm_ns[1] == 1) ##3 (ebrk_insn_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.04317
+Importance: : 2.71958
+Complexity: : 63
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a11: (csr_pipe_flush == 1) ##1 (load_err_d == 1) ##2 (exc_req_d == 0) ##3 (ebrk_insn == 1) |-> (csr_save_id_o == 0)
+IRank: : 0.04156
+Importance: : 3.20022
+Complexity: : 77
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a8: (stall == 0) ##2 (exc_req_d == 0) ##3 (ebrk_insn == 1) |-> (csr_save_id_o == 0)
+IRank: : 0.04122
+Importance: : 2.63786
+Complexity: : 64
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a21: (irq_nm_i == 0) ##2 (ctrl_fsm_ns[1] == 1) ##3 (instr_fetch_err == 1) |-> (csr_save_id_o == 1)
+IRank: : 0.03991
+Importance: : 2.71379
+Complexity: : 68
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a38: (nmi_mode_q == 1) ##2 (ctrl_fsm_ns[1] == 1) ##3 (ebrk_insn_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.03835
+Importance: : 2.72295
+Complexity: : 71
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a22: (load_err_d == 1) ##1 (ctrl_fsm_ns[1] == 1 & illegal_insn_d == 1) |=> (csr_save_id_o == 1)
+IRank: : 0.03715
+Importance: : 0.85434
+Complexity: : 23
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a18: (exc_req_lsu == 1) ##2 (ctrl_fsm_ns[1] == 1 & illegal_insn_d == 1) |=> (csr_save_id_o == 1)
+IRank: : 0.0362
+Importance: : 2.82374
+Complexity: : 78
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a17: (irq_nm_i == 0) ##2 (ctrl_fsm_ns[1] == 1 & illegal_insn_d == 1) |=> (csr_save_id_o == 1)
+IRank: : 0.03564
+Importance: : 2.81545
+Complexity: : 79
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a55: (ctrl_fsm_ns[1] == 1 & illegal_insn_d == 1 & debug_req_i == 0) |=> (csr_save_id_o == 1)
+IRank: : 0.03505
+Importance: : 1.12155
+Complexity: : 32
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a20: (csr_pipe_flush_i == 0) ##2 (ctrl_fsm_ns[1] == 1 & illegal_insn_d == 1) |=> (csr_save_id_o == 1)
+IRank: : 0.03492
+Importance: : 2.8289
+Complexity: : 81
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a60: (ctrl_fsm_ns[1] == 1 & store_err_i == 1) ##1 (ecall_insn == 1) |-> (csr_save_id_o == 1)
+IRank: : 0.03476
+Importance: : 0.83413
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a63: (ctrl_fsm_ns[1] == 1 & load_err_i == 1) ##1 (ecall_insn == 1) |-> (csr_save_id_o == 1)
+IRank: : 0.03476
+Importance: : 0.83413
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a53: (ctrl_fsm_ns[1] == 1 & store_err_i == 1) ##1 (instr_fetch_err == 1) |-> (csr_save_id_o == 1)
+IRank: : 0.03476
+Importance: : 0.83413
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a45: (ctrl_fsm_ns[1] == 1 & load_err_i == 1) ##1 (instr_fetch_err == 1) |-> (csr_save_id_o == 1)
+IRank: : 0.03476
+Importance: : 0.83413
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a48: (exc_req_lsu == 0) ##2 (ctrl_fsm_ns[1] == 1 & ecall_insn == 1) ##3 (instr_valid_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.03461
+Importance: : 2.83811
+Complexity: : 82
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a12: (exc_req_lsu == 0) ##2 (illegal_insn_d == 0) ##3 (ebrk_insn == 1 & ecall_insn == 0 & instr_fetch_err == 0) |-> (csr_save_id_o == 0)
+IRank: : 0.0346
+Importance: : 2.69841
+Complexity: : 78
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a16: (illegal_dret == 1) ##2 (ctrl_fsm_ns[1] == 1) |=> (csr_save_id_o == 1)
+IRank: : 0.03455
+Importance: : 2.72954
+Complexity: : 79
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a44: (irq_nm_i == 1) ##2 (ctrl_fsm_ns[1] == 1 & ecall_insn == 1) ##3 (instr_valid_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.03409
+Importance: : 2.82982
+Complexity: : 83
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a10: (irq_nm_i == 1) ##2 (illegal_insn_d == 0) ##3 (ebrk_insn == 1 & ecall_insn == 0 & instr_fetch_err == 0) |-> (csr_save_id_o == 0)
+IRank: : 0.03405
+Importance: : 2.69012
+Complexity: : 79
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a26: (ctrl_fsm_cs[2] == 0) ##2 (ctrl_fsm_ns[1] == 1) ##3 (ecall_insn_i == 1) |-> (csr_save_id_o == 1)
+IRank: : 0.0335
+Importance: : 2.78061
+Complexity: : 83
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a39: (ctrl_fsm_cs[2] == 0) ##2 (ctrl_fsm_ns[1] == 1) ##3 (ebrk_insn_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.0335
+Importance: : 2.78061
+Complexity: : 83
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a49: (exc_req_lsu == 0) ##2 (ctrl_fsm_ns[1] == 1 & instr_fetch_err_i == 1) ##3 (instr_valid_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.03345
+Importance: : 2.84311
+Complexity: : 85
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (exc_req_d == 0 & exc_req_lsu == 0) |=> (csr_save_id_o == 0)
+IRank: : 0.03338
+Importance: : 0.73435
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a46: (irq_nm_i == 1) ##2 (ctrl_fsm_ns[1] == 1 & instr_fetch_err_i == 1) ##3 (instr_valid_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.03296
+Importance: : 2.83482
+Complexity: : 86
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a67: (stall_jump_i == 1) ##2 (ctrl_fsm_ns[1] == 1 & wfi_insn == 1 & stall_jump_i == 1) |=> (csr_save_id_o == 1)
+IRank: : 0.03241
+Importance: : 3.46751
+Complexity: : 107
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a28: (illegal_umode == 1) ##2 (ctrl_fsm_ns[1] == 1 & illegal_insn_d == 1) |=> (csr_save_id_o == 1)
+IRank: : 0.03136
+Importance: : 2.85411
+Complexity: : 91
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a59: (ctrl_fsm_ns[1] == 1 & load_err_i == 1) ##1 (ebrk_insn_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.03108
+Importance: : 0.83912
+Complexity: : 27
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a5: (handle_irq == 1 & fetch_enable_i == 0) |=> ##2 (csr_save_id_o == 0)
+IRank: : 0.0308
+Importance: : 3.32657
+Complexity: : 108
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a65: (special_req == 0) ##1 (ctrl_fsm_ns[1] == 1 & store_err_i == 1) |=> (csr_save_id_o == 1)
+IRank: : 0.03029
+Importance: : 1.51435
+Complexity: : 50
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a6: (ctrl_fsm_cs[2] == 0 & fetch_enable_i == 1) ##1 (debug_req_i == 0) |=> ##1 (csr_save_id_o == 0)
+IRank: : 0.02697
+Importance: : 4.31506
+Complexity: : 160
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a62: (special_req == 0) ##1 (ctrl_fsm_ns[1] == 1) ##2 (instr_fetch_err_i == 1) |-> (csr_save_id_o == 1)
+IRank: : 0.02652
+Importance: : 0.90157
+Complexity: : 34
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a50: (ctrl_fsm_ns[1] == 1 & exc_req_d == 1) ##1 (ebrk_insn_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.02554
+Importance: : 0.30651
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a57: (csr_pipe_flush == 0) ##1 (ctrl_fsm_ns[1] == 1 & store_err_i == 1) ##2 (instr_valid_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.02533
+Importance: : 1.54522
+Complexity: : 61
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a61: (debug_req_i == 1) ##1 (ctrl_fsm_ns[1] == 1 & illegal_insn_d == 1) |=> (csr_save_id_o == 1)
+IRank: : 0.02493
+Importance: : 1.22147
+Complexity: : 49
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a15: (ctrl_fsm_ns[1] == 1 & debug_mode_d == 0) |=> (csr_save_id_o == 1)
+IRank: : 0.0241
+Importance: : 0.21692
+Complexity: : 9
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a33: (csr_pipe_flush == 1) ##1 (ctrl_fsm_ns[1] == 1) ##2 (ecall_insn == 1) |-> (csr_save_id_o == 1)
+IRank: : 0.0238
+Importance: : 0.90424
+Complexity: : 38
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a56: (fetch_enable_i == 0) ##2 (ctrl_fsm_ns[1] == 1 & exc_req_lsu == 1) ##3 (instr_valid_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.0223
+Importance: : 1.65005
+Complexity: : 74
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a36: (store_err_i == 0) ##1 (ctrl_fsm_ns[1] == 1) ##2 (ecall_insn == 1) |-> (csr_save_id_o == 1)
+IRank: : 0.02217
+Importance: : 0.90907
+Complexity: : 41
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a68: (fetch_enable_i == 0) ##2 (ctrl_fsm_ns[1] == 1 & store_err_i == 1) ##3 (ebrk_insn_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.02149
+Importance: : 1.65504
+Complexity: : 77
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a54: (fetch_enable_i == 0) ##2 (ctrl_fsm_ns[1] == 1 & store_err_i == 1) ##3 (instr_valid_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.02149
+Importance: : 1.65504
+Complexity: : 77
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a34: (ecall_insn == 1) ##1 (ctrl_fsm_ns[1] == 1) ##2 (ecall_insn == 1) |-> (csr_save_id_o == 1)
+IRank: : 0.02034
+Importance: : 0.91518
+Complexity: : 45
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a66: (ebrk_insn == 1 & csr_pipe_flush == 1) ##1 (ctrl_fsm_ns[1] == 1) ##2 (instr_valid_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.01983
+Importance: : 1.62627
+Complexity: : 82
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a29: (ctrl_fsm_ns[1] == 1 & ecall_insn == 1) ##1 (instr_fetch_err == 1) |-> (csr_save_id_o == 1)
+IRank: : 0.01932
+Importance: : 0.30917
+Complexity: : 16
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a58: (ctrl_fsm_ns[1] == 1 & ecall_insn == 1) ##1 (ecall_insn == 1) |-> (csr_save_id_o == 1)
+IRank: : 0.01932
+Importance: : 0.30917
+Complexity: : 16
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a64: (csr_pipe_flush == 0) ##1 (ctrl_fsm_ns[1] == 1 & ecall_insn == 1) ##2 (instr_valid_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.01925
+Importance: : 1.02027
+Complexity: : 53
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a35: (ecall_insn == 1) ##1 (ctrl_fsm_ns[1] == 1) ##2 (ebrk_insn_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.01917
+Importance: : 0.92018
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a42: (id_in_ready_o == 1) ##2 (ctrl_fsm_ns[1] == 1) ##3 (instr_valid_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.01795
+Importance: : 1.02338
+Complexity: : 57
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a43: (ctrl_fsm_cs[2] == 0) ##1 (ctrl_fsm_ns[1] == 1) ##2 (instr_valid_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.01783
+Importance: : 0.9626
+Complexity: : 54
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a19: (fetch_enable_i == 0) ##2 (ctrl_fsm_ns[1] == 1 & illegal_insn_d == 1) |=> (csr_save_id_o == 1)
+IRank: : 0.01716
+Importance: : 1.11572
+Complexity: : 65
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a37: (ctrl_fsm_ns[1] == 1 & illegal_insn_d == 1) ##1 (ebrk_insn_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.017
+Importance: : 0.323
+Complexity: : 19
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a7: (id_in_ready_o == 1 & fetch_enable_i == 1) ##2 (exc_req_d == 0) |=> (csr_save_id_o == 0)
+IRank: : 0.01657
+Importance: : 1.73953
+Complexity: : 105
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a23: (dret_insn == 1) ##1 (ctrl_fsm_ns[1] == 1) ##2 (ecall_insn_i == 1) |-> (csr_save_id_o == 1)
+IRank: : 0.01653
+Importance: : 0.94239
+Complexity: : 57
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a24: (dret_insn == 1) ##1 (ctrl_fsm_ns[1] == 1) ##2 (instr_valid_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.01653
+Importance: : 0.94239
+Complexity: : 57
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a9: (fetch_enable_i == 1) ##1 (dret_insn == 1) ##2 (exc_req_d == 0) ##3 (ebrk_insn == 1) |-> (csr_save_id_o == 0)
+IRank: : 0.01582
+Importance: : 1.67674
+Complexity: : 106
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a27: (mret_insn == 1) ##1 (ctrl_fsm_ns[1] == 1) ##2 (ecall_insn_i == 1) |-> (csr_save_id_o == 1)
+IRank: : 0.01579
+Importance: : 0.94711
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a52: (fetch_enable_i == 0) ##2 (ctrl_fsm_ns[1] == 1 & instr_fetch_err_i == 1) ##3 (instr_valid_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.01577
+Importance: : 1.13509
+Complexity: : 72
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a13: (fetch_enable_i == 0) ##2 (illegal_insn_d == 0) ##3 (ebrk_insn == 1 & ecall_insn == 0 & instr_fetch_err == 0) |-> (csr_save_id_o == 0)
+IRank: : 0.01524
+Importance: : 0.9904
+Complexity: : 65
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a25: (id_in_ready_o == 1) ##1 (ctrl_fsm_ns[1] == 1) ##2 (ecall_insn_i == 1) |-> (csr_save_id_o == 1)
+IRank: : 0.01491
+Importance: : 0.41738
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a32: (ctrl_fsm_ns[1] == 1 & ebrk_insn_i == 1) ##1 (instr_valid_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.01451
+Importance: : 0.31917
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a47: (ctrl_fsm_ns[1] == 1 & ebrk_insn_i == 1) ##1 (ecall_insn_i == 1) |-> (csr_save_id_o == 1)
+IRank: : 0.01451
+Importance: : 0.31917
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a41: (ctrl_fsm_ns[1] == 1 & ebrk_insn_i == 1) ##1 (ebrk_insn_i == 0) |-> (csr_save_id_o == 1)
+IRank: : 0.01451
+Importance: : 0.31917
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a51: (ebreak_into_debug == 1) ##1 (ctrl_fsm_ns[1] == 1 & illegal_insn_d == 1) |=> (csr_save_id_o == 1)
+IRank: : 0.01402
+Importance: : 0.51888
+Complexity: : 37
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a14: (illegal_insn_d == 0 & debug_mode_d == 1) ##1 (ebrk_insn == 1 & ecall_insn == 0 & instr_fetch_err == 0) |-> (csr_save_id_o == 0)
+IRank: : 0.01007
+Importance: : 0.21145
+Complexity: : 21
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (ctrl_fsm_cs[2] == 0) |=> (csr_save_id_o == 0)
+IRank: : 0.00853
+Importance: : 0.15345
+Complexity: : 18
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (ctrl_fsm_cs[0] == 0) |=> (csr_save_id_o == 0)
+IRank: : 0.00853
+Importance: : 0.15345
+Complexity: : 18
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (instr_valid_i == 0) |=> (csr_save_id_o == 0)
+IRank: : 0.00774
+Importance: : 0.11603
+Complexity: : 15
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a0        | 0.06235 |  0.62349   |     10     |  Unknown  | Unknown |   Unknown   
+      a30       | 0.0435  |  0.82647   |     19     |  Unknown  | Unknown |   Unknown   
+      a31       | 0.04317 |  2.71958   |     63     |  Unknown  | Unknown |   Unknown   
+      a40       | 0.04317 |  2.71958   |     63     |  Unknown  | Unknown |   Unknown   
+      a11       | 0.04156 |  3.20022   |     77     |  Unknown  | Unknown |   Unknown   
+      a8        | 0.04122 |  2.63786   |     64     |  Unknown  | Unknown |   Unknown   
+      a21       | 0.03991 |  2.71379   |     68     |  Unknown  | Unknown |   Unknown   
+      a38       | 0.03835 |  2.72295   |     71     |  Unknown  | Unknown |   Unknown   
+      a22       | 0.03715 |  0.85434   |     23     |  Unknown  | Unknown |   Unknown   
+      a18       | 0.0362  |  2.82374   |     78     |  Unknown  | Unknown |   Unknown   
+      a17       | 0.03564 |  2.81545   |     79     |  Unknown  | Unknown |   Unknown   
+      a55       | 0.03505 |  1.12155   |     32     |  Unknown  | Unknown |   Unknown   
+      a20       | 0.03492 |   2.8289   |     81     |  Unknown  | Unknown |   Unknown   
+      a60       | 0.03476 |  0.83413   |     24     |  Unknown  | Unknown |   Unknown   
+      a63       | 0.03476 |  0.83413   |     24     |  Unknown  | Unknown |   Unknown   
+      a53       | 0.03476 |  0.83413   |     24     |  Unknown  | Unknown |   Unknown   
+      a45       | 0.03476 |  0.83413   |     24     |  Unknown  | Unknown |   Unknown   
+      a48       | 0.03461 |  2.83811   |     82     |  Unknown  | Unknown |   Unknown   
+      a12       | 0.0346  |  2.69841   |     78     |  Unknown  | Unknown |   Unknown   
+      a16       | 0.03455 |  2.72954   |     79     |  Unknown  | Unknown |   Unknown   
+      a44       | 0.03409 |  2.82982   |     83     |  Unknown  | Unknown |   Unknown   
+      a10       | 0.03405 |  2.69012   |     79     |  Unknown  | Unknown |   Unknown   
+      a26       | 0.0335  |  2.78061   |     83     |  Unknown  | Unknown |   Unknown   
+      a39       | 0.0335  |  2.78061   |     83     |  Unknown  | Unknown |   Unknown   
+      a49       | 0.03345 |  2.84311   |     85     |  Unknown  | Unknown |   Unknown   
+      a4        | 0.03338 |  0.73435   |     22     |  Unknown  | Unknown |   Unknown   
+      a46       | 0.03296 |  2.83482   |     86     |  Unknown  | Unknown |   Unknown   
+      a67       | 0.03241 |  3.46751   |    107     |  Unknown  | Unknown |   Unknown   
+      a28       | 0.03136 |  2.85411   |     91     |  Unknown  | Unknown |   Unknown   
+      a59       | 0.03108 |  0.83912   |     27     |  Unknown  | Unknown |   Unknown   
+      a5        | 0.0308  |  3.32657   |    108     |  Unknown  | Unknown |   Unknown   
+      a65       | 0.03029 |  1.51435   |     50     |  Unknown  | Unknown |   Unknown   
+      a6        | 0.02697 |  4.31506   |    160     |  Unknown  | Unknown |   Unknown   
+      a62       | 0.02652 |  0.90157   |     34     |  Unknown  | Unknown |   Unknown   
+      a50       | 0.02554 |  0.30651   |     12     |  Unknown  | Unknown |   Unknown   
+      a57       | 0.02533 |  1.54522   |     61     |  Unknown  | Unknown |   Unknown   
+      a61       | 0.02493 |  1.22147   |     49     |  Unknown  | Unknown |   Unknown   
+      a15       | 0.0241  |  0.21692   |     9      |  Unknown  | Unknown |   Unknown   
+      a33       | 0.0238  |  0.90424   |     38     |  Unknown  | Unknown |   Unknown   
+      a56       | 0.0223  |  1.65005   |     74     |  Unknown  | Unknown |   Unknown   
+      a36       | 0.02217 |  0.90907   |     41     |  Unknown  | Unknown |   Unknown   
+      a68       | 0.02149 |  1.65504   |     77     |  Unknown  | Unknown |   Unknown   
+      a54       | 0.02149 |  1.65504   |     77     |  Unknown  | Unknown |   Unknown   
+      a34       | 0.02034 |  0.91518   |     45     |  Unknown  | Unknown |   Unknown   
+      a66       | 0.01983 |  1.62627   |     82     |  Unknown  | Unknown |   Unknown   
+      a58       | 0.01932 |  0.30917   |     16     |  Unknown  | Unknown |   Unknown   
+      a29       | 0.01932 |  0.30917   |     16     |  Unknown  | Unknown |   Unknown   
+      a64       | 0.01925 |  1.02027   |     53     |  Unknown  | Unknown |   Unknown   
+      a35       | 0.01917 |  0.92018   |     48     |  Unknown  | Unknown |   Unknown   
+      a42       | 0.01795 |  1.02338   |     57     |  Unknown  | Unknown |   Unknown   
+      a43       | 0.01783 |   0.9626   |     54     |  Unknown  | Unknown |   Unknown   
+      a19       | 0.01716 |  1.11572   |     65     |  Unknown  | Unknown |   Unknown   
+      a37       |  0.017  |   0.323    |     19     |  Unknown  | Unknown |   Unknown   
+      a7        | 0.01657 |  1.73953   |    105     |  Unknown  | Unknown |   Unknown   
+      a23       | 0.01653 |  0.94239   |     57     |  Unknown  | Unknown |   Unknown   
+      a24       | 0.01653 |  0.94239   |     57     |  Unknown  | Unknown |   Unknown   
+      a9        | 0.01582 |  1.67674   |    106     |  Unknown  | Unknown |   Unknown   
+      a27       | 0.01579 |  0.94711   |     60     |  Unknown  | Unknown |   Unknown   
+      a52       | 0.01577 |  1.13509   |     72     |  Unknown  | Unknown |   Unknown   
+      a13       | 0.01524 |   0.9904   |     65     |  Unknown  | Unknown |   Unknown   
+      a25       | 0.01491 |  0.41738   |     28     |  Unknown  | Unknown |   Unknown   
+      a32       | 0.01451 |  0.31917   |     22     |  Unknown  | Unknown |   Unknown   
+      a47       | 0.01451 |  0.31917   |     22     |  Unknown  | Unknown |   Unknown   
+      a41       | 0.01451 |  0.31917   |     22     |  Unknown  | Unknown |   Unknown   
+      a51       | 0.01402 |  0.51888   |     37     |  Unknown  | Unknown |   Unknown   
+      a14       | 0.01007 |  0.21145   |     21     |  Unknown  | Unknown |   Unknown   
+      a3        | 0.00853 |  0.15345   |     18     |  Unknown  | Unknown |   Unknown   
+      a2        | 0.00853 |  0.15345   |     18     |  Unknown  | Unknown |   Unknown   
+      a1        | 0.00774 |  0.11603   |     15     |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 69
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 69
+Hit rate: 0.0
+Miss rate: 1.0

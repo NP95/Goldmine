@@ -1,0 +1,2 @@
+../verilog/IBex/ibex_prefetch_buffer.v
+../verilog/IBex/ibex_fetch_fifo.v

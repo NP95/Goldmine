@@ -1,0 +1,136 @@
+Report file generated at: Mar-14-2020 11:23:18 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a7: (ecall_insn == 1) |=> ##2 (debug_csr_save_o == 0)
+IRank: : 0.06453
+Importance: : 5.29156
+Complexity: : 82
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a10: (irq_nm_i == 1) ##1 (enter_debug_mode == 1) ##2 (ctrl_fsm_ns[2] == 0) |=> (debug_csr_save_o == 1)
+IRank: : 0.06266
+Importance: : 7.51896
+Complexity: : 120
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a11: (wfi_insn == 1) ##1 (handle_irq == 1) ##2 (ctrl_fsm_ns[2] == 0) |=> (debug_csr_save_o == 1)
+IRank: : 0.05098
+Importance: : 7.03497
+Complexity: : 138
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (special_req == 0) |=> (debug_csr_save_o == 0)
+IRank: : 0.03987
+Importance: : 0.39871
+Complexity: : 10
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (stall_multdiv_i == 0) |=> ##1 (debug_csr_save_o == 0)
+IRank: : 0.03526
+Importance: : 1.6221
+Complexity: : 46
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a6: (debug_req_i == 0) |=> (debug_csr_save_o == 0)
+IRank: : 0.03071
+Importance: : 0.52204
+Complexity: : 17
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a8: (priv_mode_i[0] == 1) |=> ##2 (debug_csr_save_o == 0)
+IRank: : 0.02498
+Importance: : 1.74892
+Complexity: : 70
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a9: (load_err_d == 1) ##1 (illegal_dret == 1) |=> (debug_csr_save_o == 1)
+IRank: : 0.02004
+Importance: : 0.76162
+Complexity: : 38
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (ctrl_fsm_cs[0] == 1) |=> (debug_csr_save_o == 0)
+IRank: : 0.01532
+Importance: : 0.45973
+Complexity: : 30
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (ctrl_fsm_cs[1] == 0) |=> (debug_csr_save_o == 0)
+IRank: : 0.01532
+Importance: : 0.45973
+Complexity: : 30
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a5: (debug_mode_q == 1) |=> (debug_csr_save_o == 0)
+IRank: : 0.01336
+Importance: : 0.44073
+Complexity: : 33
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (debug_mode_d == 1) |=> (debug_csr_save_o == 0)
+IRank: : 0.00564
+Importance: : 0.02254
+Complexity: : 4
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a7        | 0.06453 |  5.29156   |     82     |  Unknown  | Unknown |   Unknown   
+      a10       | 0.06266 |  7.51896   |    120     |  Unknown  | Unknown |   Unknown   
+      a11       | 0.05098 |  7.03497   |    138     |  Unknown  | Unknown |   Unknown   
+      a0        | 0.03987 |  0.39871   |     10     |  Unknown  | Unknown |   Unknown   
+      a2        | 0.03526 |   1.6221   |     46     |  Unknown  | Unknown |   Unknown   
+      a6        | 0.03071 |  0.52204   |     17     |  Unknown  | Unknown |   Unknown   
+      a8        | 0.02498 |  1.74892   |     70     |  Unknown  | Unknown |   Unknown   
+      a9        | 0.02004 |  0.76162   |     38     |  Unknown  | Unknown |   Unknown   
+      a3        | 0.01532 |  0.45973   |     30     |  Unknown  | Unknown |   Unknown   
+      a4        | 0.01532 |  0.45973   |     30     |  Unknown  | Unknown |   Unknown   
+      a5        | 0.01336 |  0.44073   |     33     |  Unknown  | Unknown |   Unknown   
+      a1        | 0.00564 |  0.02254   |     4      |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 12
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 12
+Hit rate: 0.0
+Miss rate: 1.0

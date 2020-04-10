@@ -1,0 +1,12 @@
+instr_rdata_i	decoder_i.instr_rdata_i
+decoder_i.MD_OP_DIV	decoder_i.multdiv_operator_o
+multdiv_operator	multdiv_operator_ex_o
+decoder_i.opcode	decoder_i.multdiv_operator_o
+decoder_i.multdiv_operator_o	multdiv_operator
+decoder_i.instr	decoder_i.opcode
+decoder_i.instr	decoder_i.multdiv_operator_o
+decoder_i.sv2v_cast_DB892	decoder_i.opcode
+decoder_i.MD_OP_MULH	decoder_i.multdiv_operator_o
+decoder_i.instr_rdata_i	decoder_i.instr
+decoder_i.MD_OP_MULL	decoder_i.multdiv_operator_o
+decoder_i.MD_OP_REM	decoder_i.multdiv_operator_o

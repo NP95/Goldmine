@@ -1,0 +1,205 @@
+data_req_dec
+Importance: 0.01282
+Complexity: 7
+Rank: 0.00183
+
+decoder_i.illegal_c_insn_i
+Importance: 0.02043
+Complexity: 9
+Rank: 0.00227
+
+[1]decoder_i.instr_rdata_i
+Importance: 0.06312
+Complexity: 19
+Rank: 0.00332
+
+[1]id_wb_fsm_ns
+Importance: 0.02367
+Complexity: 6
+Rank: 0.00395
+
+[1]branch_decision_i
+Importance: 0.02517
+Complexity: 10
+Rank: 0.00252
+
+lsu_valid_i
+Importance: 0.00673
+Complexity: 7
+Rank: 0.00096
+
+decoder_i.data_req_o
+Importance: 0.01453
+Complexity: 7
+Rank: 0.00208
+
+decoder_i.instr
+Importance: 0.02437
+Complexity: 14
+Rank: 0.00174
+
+branch_decision_i
+Importance: 0.00673
+Complexity: 5
+Rank: 0.00135
+
+id_wb_fsm_cs
+Importance: 0.01965
+Complexity: 4
+Rank: 0.00491
+
+decoder_i.instr_rdata_i
+Importance: 0.02624
+Complexity: 16
+Rank: 0.00164
+
+[1]IDLE
+Importance: 0.04884
+Complexity: 12
+Rank: 0.00407
+
+[1]id_wb_fsm_cs
+Importance: 0.16965
+Complexity: 9
+Rank: 0.01885
+
+instr_fetch_err_i
+Importance: 0.01197
+Complexity: 5
+Rank: 0.00239
+
+[1]decoder_i.opcode
+Importance: 0.05882
+Complexity: 14
+Rank: 0.0042
+
+decoder_i.opcode
+Importance: 0.02194
+Complexity: 11
+Rank: 0.00199
+
+[1]decoder_i.data_req_o
+Importance: 0.0514
+Complexity: 10
+Rank: 0.00514
+
+decoder_i.csr_illegal
+Importance: 0.01969
+Complexity: 10
+Rank: 0.00197
+
+[1]instr_rdata_i
+Importance: 0.06461
+Complexity: 19
+Rank: 0.0034
+
+[1]instr_new_i
+Importance: 0.09619
+Complexity: 8
+Rank: 0.01202
+
+[1]rst_ni
+Importance: 0.04079
+Complexity: 5
+Rank: 0.00816
+
+[1]illegal_c_insn_i
+Importance: 0.0588
+Complexity: 12
+Rank: 0.0049
+
+decoder_i.sv2v_cast_DB892
+Importance: 0.02344
+Complexity: 14
+Rank: 0.00167
+
+[1]decoder_i.sv2v_cast_DB892
+Importance: 0.06031
+Complexity: 17
+Rank: 0.00355
+
+[1]lsu_valid_i
+Importance: 0.02517
+Complexity: 10
+Rank: 0.00252
+
+instr_new_i
+Importance: 0.01197
+Complexity: 5
+Rank: 0.00239
+
+[1]decoder_i.instr
+Importance: 0.06125
+Complexity: 17
+Rank: 0.0036
+
+[1]data_req_dec
+Importance: 0.04969
+Complexity: 10
+Rank: 0.00497
+
+instr_is_compressed_i
+Importance: 0.0044
+Complexity: 3
+Rank: 0.00147
+
+[1]decoder_i.illegal_c_insn_i
+Importance: 0.0573
+Complexity: 12
+Rank: 0.00478
+
+[1]decoder_i.illegal_insn
+Importance: 0.05506
+Complexity: 11
+Rank: 0.00501
+
+instr_rdata_i
+Importance: 0.02774
+Complexity: 16
+Rank: 0.00173
+
+illegal_c_insn_i
+Importance: 0.02193
+Complexity: 9
+Rank: 0.00244
+
+[1]ex_valid_i
+Importance: 0.02517
+Complexity: 10
+Rank: 0.00252
+
+[1]decoder_i.csr_illegal
+Importance: 0.05657
+Complexity: 13
+Rank: 0.00435
+
+instr_ret_o
+Importance: 0.00524
+Complexity: 3
+Rank: 0.00175
+
+[1]WAIT_MULTICYCLE
+Importance: 0.09619
+Complexity: 16
+Rank: 0.00601
+
+[1]instr_fetch_err_i
+Importance: 0.09619
+Complexity: 8
+Rank: 0.01202
+
+instr_ret_compressed_o
+Importance: 0.00291
+Complexity: 0
+Rank: 0.0
+
+ex_valid_i
+Importance: 0.00673
+Complexity: 7
+Rank: 0.00096
+
+decoder_i.illegal_insn
+Importance: 0.01819
+Complexity: 8
+Rank: 0.00227
+

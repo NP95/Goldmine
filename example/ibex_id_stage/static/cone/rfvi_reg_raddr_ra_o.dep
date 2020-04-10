@@ -1,0 +1,5 @@
+instr_rdata_i	decoder_i.instr_rdata_i
+decoder_i.regfile_raddr_a_o	regfile_raddr_a
+decoder_i.instr	decoder_i.regfile_raddr_a_o
+decoder_i.instr_rdata_i	decoder_i.instr
+regfile_raddr_a	rfvi_reg_raddr_ra_o

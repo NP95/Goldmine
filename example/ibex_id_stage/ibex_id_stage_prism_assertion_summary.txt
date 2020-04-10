@@ -1,0 +1,44 @@
+Assertion report generated on: 10-Apr-2020 12:27:38 AM
+
+Assertion summary report for design: ibex_id_stage
+##################################################
+
+        Target         | Total | Passed | Failed | Vacuous | Hit | Miss
+---------------------- | ----- | ------ | ------ | ------- | --- | ----
+     csr_access_o      |  12   |   0    |   0    |   12    | 0.0 | 1.0 
+csr_restore_dret_id_o  |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+csr_restore_mret_id_o  |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+   csr_save_cause_o    |  113  |   0    |   0    |   113   | 0.0 | 1.0 
+    csr_save_id_o      |  111  |   0    |   0    |   111   | 0.0 | 1.0 
+    csr_save_if_o      |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+     ctrl_busy_o       |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+    data_req_ex_o      |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+  data_sign_ext_ex_o   |   2   |   0    |   0    |    2    | 0.0 | 1.0 
+     data_we_ex_o      |  11   |   0    |   0    |   11    | 0.0 | 1.0 
+   debug_csr_save_o    |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+     debug_mode_o      |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+     div_en_ex_o       |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+    id_in_ready_o      |  64   |   0    |   0    |   64    | 0.0 | 1.0 
+    illegal_insn_o     |   7   |   0    |   0    |    7    | 0.0 | 1.0 
+     instr_req_o       |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+instr_ret_compressed_o |   5   |   0    |   0    |    5    | 0.0 | 1.0 
+     instr_ret_o       |   4   |   0    |   0    |    4    | 0.0 | 1.0 
+ instr_valid_clear_o   |  68   |   0    |   0    |   68    | 0.0 | 1.0 
+     mult_en_ex_o      |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+       pc_set_o        |  108  |   0    |   0    |   108   | 0.0 | 1.0 
+    perf_branch_o      |  12   |   0    |   0    |   12    | 0.0 | 1.0 
+     perf_jump_o       |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+    perf_tbranch_o     |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+    rfvi_reg_we_o      |   5   |   0    |   0    |    5    | 0.0 | 1.0 
+
+
+Resource usage summary report for the desing: ibex_id_stage
+###########################################################
+
+      Phase       | Time (in [H]H:MM:SS:UUUUUU) | Memory (in MB)
+----------------- | --------------------------- | --------------
+V Parse & Ranking |       0:00:09.209700        |     483.96    
+   Simulation     |       0:00:02.018555        |     555.97    
+     D Parse      |       0:03:48.091686        |     971.19    
+     Mining       |       0:23:01.381091        |     978.26    
+     Overall      |       0:27:03.993352        |     978.26    

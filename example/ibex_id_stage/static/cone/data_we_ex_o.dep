@@ -1,0 +1,15 @@
+instr_rdata_i	decoder_i.instr_rdata_i
+decoder_i.illegal_c_insn_i	decoder_i.illegal_insn
+illegal_c_insn_i	decoder_i.illegal_c_insn_i
+decoder_i.opcode	decoder_i.data_we_o
+decoder_i.opcode	decoder_i.csr_illegal
+decoder_i.opcode	decoder_i.illegal_insn
+data_we_id	data_we_ex_o
+decoder_i.instr	decoder_i.opcode
+decoder_i.instr	decoder_i.csr_illegal
+decoder_i.instr	decoder_i.illegal_insn
+decoder_i.csr_illegal	decoder_i.illegal_insn
+decoder_i.data_we_o	data_we_id
+decoder_i.instr_rdata_i	decoder_i.instr
+decoder_i.sv2v_cast_DB892	decoder_i.opcode
+decoder_i.illegal_insn	decoder_i.data_we_o

@@ -1,0 +1,1075 @@
+[3]irq_nm_i
+Importance: 5.27216
+Complexity: 76
+Rank: 0.06937
+
+[1]special_req
+Importance: 0.39871
+Complexity: 10
+Rank: 0.03987
+
+[3]wfi_insn
+Importance: 5.31849
+Complexity: 94
+Rank: 0.05658
+
+[3]fetch_enable_i
+Importance: 1.73476
+Complexity: 62
+Rank: 0.02798
+
+[3]WAIT_SLEEP
+Importance: 1.73476
+Complexity: 63
+Rank: 0.02754
+
+[1]debug_mode_d
+Importance: 0.02254
+Complexity: 4
+Rank: 0.00564
+
+[2]DECODE
+Importance: 5.11697
+Complexity: 42
+Rank: 0.12183
+
+[2]csr_pipe_flush
+Importance: 1.62493
+Complexity: 46
+Rank: 0.03532
+
+[3]csr_pipe_flush_i
+Importance: 5.28561
+Complexity: 78
+Rank: 0.06776
+
+[2]stall_multdiv_i
+Importance: 1.6221
+Complexity: 46
+Rank: 0.03526
+
+debug_csr_save_o
+Importance: 0.00665
+Complexity: 0
+Rank: 0.0
+
+[1]ctrl_fsm_cs
+Importance: 0.45973
+Complexity: 30
+Rank: 0.01532
+
+[1]instr_valid_i
+Importance: 0.42231
+Complexity: 27
+Rank: 0.01564
+
+[2]load_err_d
+Importance: 0.32976
+Complexity: 8
+Rank: 0.04122
+
+[3]mret_insn
+Importance: 5.31849
+Complexity: 94
+Rank: 0.05658
+
+[2]WAIT_SLEEP
+Importance: 0.5162
+Complexity: 34
+Rank: 0.01518
+
+[1]debug_mode_q
+Importance: 0.44073
+Complexity: 33
+Rank: 0.01336
+
+debug_ebreaku_i
+Importance: 0.02581
+Complexity: 9
+Rank: 0.00287
+
+[2]ebreak_into_debug
+Importance: 0.52536
+Complexity: 34
+Rank: 0.01545
+
+[2]stall_branch_i
+Importance: 1.6221
+Complexity: 46
+Rank: 0.03526
+
+[1]SLEEP
+Importance: 0.11001
+Complexity: 5
+Rank: 0.022
+
+[1]FIRST_FETCH
+Importance: 0.21502
+Complexity: 7
+Rank: 0.03072
+
+[1]exc_req_q
+Importance: 0.32312
+Complexity: 6
+Rank: 0.05385
+
+[1]debug_req_i
+Importance: 0.52204
+Complexity: 17
+Rank: 0.03071
+
+[2]debug_req_i
+Importance: 2.14679
+Complexity: 46
+Rank: 0.04667
+
+[2]enter_debug_mode
+Importance: 2.14179
+Complexity: 41
+Rank: 0.05224
+
+[3]ecall_insn
+Importance: 5.29156
+Complexity: 82
+Rank: 0.06453
+
+[1]rst_ni
+Importance: 0.11209
+Complexity: 2
+Rank: 0.05604
+
+[2]SLEEP
+Importance: 0.5162
+Complexity: 34
+Rank: 0.01518
+
+[3]store_err_i
+Importance: 5.28545
+Complexity: 78
+Rank: 0.06776
+
+debug_mode_q
+Importance: 0.01552
+Complexity: 2
+Rank: 0.00776
+
+[2]ecall_insn
+Importance: 1.63587
+Complexity: 53
+Rank: 0.03087
+
+[2]store_err_i
+Importance: 1.62976
+Complexity: 49
+Rank: 0.03326
+
+[2]dret_insn
+Importance: 1.65809
+Complexity: 62
+Rank: 0.02674
+
+[2]stall_lsu_i
+Importance: 1.6221
+Complexity: 46
+Rank: 0.03526
+
+[2]store_err_d
+Importance: 0.32976
+Complexity: 8
+Rank: 0.04122
+
+[2]load_err_q
+Importance: 1.54207
+Complexity: 35
+Rank: 0.04406
+
+[2]load_err_i
+Importance: 0.33475
+Complexity: 10
+Rank: 0.03348
+
+[3]store_err_q
+Importance: 5.19775
+Complexity: 64
+Rank: 0.08121
+
+[1]RESET
+Importance: 0.05854
+Complexity: 3
+Rank: 0.01951
+
+[2]store_err_q
+Importance: 1.54207
+Complexity: 35
+Rank: 0.04406
+
+[1]dret_insn
+Importance: 0.43952
+Complexity: 33
+Rank: 0.01332
+
+[3]csr_mstatus_mie_i
+Importance: 5.27216
+Complexity: 76
+Rank: 0.06937
+
+[1]csr_mstatus_tw_i
+Importance: 0.44158
+Complexity: 36
+Rank: 0.01227
+
+[3]illegal_insn_q
+Importance: 1.73924
+Complexity: 62
+Rank: 0.02805
+
+[1]ecall_insn
+Importance: 0.41731
+Complexity: 24
+Rank: 0.01739
+
+[2]debug_mode_q
+Importance: 1.65929
+Complexity: 62
+Rank: 0.02676
+
+[3]illegal_insn_d
+Importance: 5.30038
+Complexity: 82
+Rank: 0.06464
+
+[2]fetch_enable_i
+Importance: 0.5162
+Complexity: 33
+Rank: 0.01564
+
+[2]csr_mstatus_mie_i
+Importance: 1.61647
+Complexity: 47
+Rank: 0.03439
+
+[2]id_in_ready_o
+Importance: 0.52051
+Complexity: 33
+Rank: 0.01577
+
+[2]debug_mode_d
+Importance: 0.44776
+Complexity: 35
+Rank: 0.01279
+
+[2]DBG_TAKEN_ID
+Importance: 0.5162
+Complexity: 34
+Rank: 0.01518
+
+[3]illegal_insn_i
+Importance: 5.30538
+Complexity: 88
+Rank: 0.06029
+
+[2]DBG_TAKEN_IF
+Importance: 1.53859
+Complexity: 38
+Rank: 0.04049
+
+[1]WAIT_SLEEP
+Importance: 0.11001
+Complexity: 5
+Rank: 0.022
+
+[3]priv_mode_i
+Importance: 1.74892
+Complexity: 70
+Rank: 0.02498
+
+[1]illegal_insn_d
+Importance: 0.42614
+Complexity: 24
+Rank: 0.01776
+
+[2]instr_fetch_err_i
+Importance: 1.64087
+Complexity: 56
+Rank: 0.0293
+
+[1]csr_pipe_flush_i
+Importance: 0.41137
+Complexity: 20
+Rank: 0.02057
+
+[3]handle_irq
+Importance: 5.26716
+Complexity: 70
+Rank: 0.07525
+
+[3]ebrk_insn
+Importance: 5.29156
+Complexity: 82
+Rank: 0.06453
+
+[1]load_err_q
+Importance: 0.32351
+Complexity: 6
+Rank: 0.05392
+
+[3]FLUSH
+Importance: 5.30538
+Complexity: 88
+Rank: 0.06029
+
+[1]irq_pending_i
+Importance: 0.39791
+Complexity: 18
+Rank: 0.02211
+
+[3]debug_single_step_i
+Importance: 7.02103
+Complexity: 75
+Rank: 0.09361
+
+[3]IRQ_TAKEN
+Importance: 5.19427
+Complexity: 67
+Rank: 0.07753
+
+[2]rst_ni
+Importance: 0.65201
+Complexity: 7
+Rank: 0.09314
+
+[1]mret_insn
+Importance: 0.44424
+Complexity: 36
+Rank: 0.01234
+
+[1]enter_debug_mode
+Importance: 0.51704
+Complexity: 12
+Rank: 0.04309
+
+[2]wfi_insn
+Importance: 1.6628
+Complexity: 65
+Rank: 0.02558
+
+[1]illegal_insn_q
+Importance: 0.11449
+Complexity: 4
+Rank: 0.02862
+
+[1]priv_mode_i
+Importance: 0.12417
+Complexity: 12
+Rank: 0.01035
+
+[3]irq_pending_i
+Importance: 5.27216
+Complexity: 76
+Rank: 0.06937
+
+[3]nmi_mode_q
+Importance: 5.27632
+Complexity: 76
+Rank: 0.06943
+
+[1]PRIV_LVL_M
+Importance: 0.12417
+Complexity: 12
+Rank: 0.01035
+
+PRIV_LVL_U
+Importance: 0.02581
+Complexity: 9
+Rank: 0.00287
+
+[1]wfi_insn
+Importance: 0.44424
+Complexity: 36
+Rank: 0.01234
+
+[3]instr_valid_i
+Importance: 5.29655
+Complexity: 85
+Rank: 0.06231
+
+[1]stall
+Importance: 0.39854
+Complexity: 12
+Rank: 0.03321
+
+[3]ctrl_fsm_cs
+Importance: 5.33398
+Complexity: 88
+Rank: 0.06061
+
+[3]illegal_dret
+Importance: 5.30611
+Complexity: 88
+Rank: 0.0603
+
+[1]store_err_q
+Importance: 0.32351
+Complexity: 6
+Rank: 0.05392
+
+[3]mret_insn_i
+Importance: 5.32348
+Complexity: 97
+Rank: 0.05488
+
+[2]handle_irq
+Importance: 1.61148
+Complexity: 41
+Rank: 0.0393
+
+[2]mret_insn_i
+Importance: 1.6678
+Complexity: 68
+Rank: 0.02453
+
+[1]store_err_i
+Importance: 0.4112
+Complexity: 20
+Rank: 0.02056
+
+[3]DECODE
+Importance: 17.30259
+Complexity: 71
+Rank: 0.2437
+
+PRIV_LVL_M
+Importance: 0.02581
+Complexity: 9
+Rank: 0.00287
+
+[1]fetch_enable_i
+Importance: 0.11001
+Complexity: 4
+Rank: 0.0275
+
+[2]FLUSH
+Importance: 1.6497
+Complexity: 59
+Rank: 0.02796
+
+[2]illegal_insn_d
+Importance: 1.6447
+Complexity: 53
+Rank: 0.03103
+
+[2]halt_if
+Importance: 0.53404
+Complexity: 36
+Rank: 0.01483
+
+[3]halt_if
+Importance: 1.7526
+Complexity: 65
+Rank: 0.02696
+
+[1]instr_fetch_err
+Importance: 0.41731
+Complexity: 24
+Rank: 0.01739
+
+[2]illegal_insn_i
+Importance: 1.6497
+Complexity: 59
+Rank: 0.02796
+
+[3]debug_req_i
+Importance: 7.02103
+Complexity: 75
+Rank: 0.09361
+
+[1]stall_jump_i
+Importance: 0.40354
+Complexity: 17
+Rank: 0.02374
+
+[3]DBG_TAKEN_IF
+Importance: 5.19427
+Complexity: 67
+Rank: 0.07753
+
+[2]illegal_insn_q
+Importance: 0.52067
+Complexity: 33
+Rank: 0.01578
+
+[3]DBG_TAKEN_ID
+Importance: 1.73476
+Complexity: 63
+Rank: 0.02754
+
+[1]irq_nm_i
+Importance: 0.39791
+Complexity: 18
+Rank: 0.02211
+
+[1]stall_branch_i
+Importance: 0.40354
+Complexity: 17
+Rank: 0.02374
+
+[3]special_req
+Importance: 5.27295
+Complexity: 68
+Rank: 0.07754
+
+[2]ctrl_fsm_ns
+Importance: 0.5112
+Complexity: 32
+Rank: 0.01597
+
+ebreak_into_debug
+Importance: 0.02081
+Complexity: 2
+Rank: 0.0104
+
+[2]irq_nm_i
+Importance: 1.61647
+Complexity: 47
+Rank: 0.03439
+
+[3]ecall_insn_i
+Importance: 5.29655
+Complexity: 85
+Rank: 0.06231
+
+[1]ebreak_into_debug
+Importance: 0.11917
+Complexity: 5
+Rank: 0.02383
+
+[1]csr_mstatus_mie_i
+Importance: 0.39791
+Complexity: 18
+Rank: 0.02211
+
+[1]instr_fetch_err_i
+Importance: 0.42231
+Complexity: 27
+Rank: 0.01564
+
+[2]instr_fetch_err
+Importance: 1.63587
+Complexity: 53
+Rank: 0.03087
+
+[1]nmi_mode_q
+Importance: 0.40207
+Complexity: 18
+Rank: 0.02234
+
+[3]rst_ni
+Importance: 3.08914
+Complexity: 36
+Rank: 0.08581
+
+[1]ecall_insn_i
+Importance: 0.42231
+Complexity: 27
+Rank: 0.01564
+
+[2]mret_insn
+Importance: 1.6628
+Complexity: 65
+Rank: 0.02558
+
+[3]exc_req_lsu
+Importance: 5.28045
+Complexity: 75
+Rank: 0.07041
+
+[1]debug_ebreaku_i
+Importance: 0.12417
+Complexity: 12
+Rank: 0.01035
+
+[3]debug_ebreakm_i
+Importance: 1.74892
+Complexity: 70
+Rank: 0.02498
+
+[1]PRIV_LVL_U
+Importance: 0.12417
+Complexity: 12
+Rank: 0.01035
+
+[1]id_in_ready_o
+Importance: 0.11433
+Complexity: 4
+Rank: 0.02858
+
+[3]PRIV_LVL_M
+Importance: 1.74892
+Complexity: 70
+Rank: 0.02498
+
+[1]stall_multdiv_i
+Importance: 0.40354
+Complexity: 17
+Rank: 0.02374
+
+[2]exc_req_lsu
+Importance: 1.62476
+Complexity: 46
+Rank: 0.03532
+
+[1]debug_single_step_i
+Importance: 0.52204
+Complexity: 17
+Rank: 0.03071
+
+[1]handle_irq
+Importance: 0.39291
+Complexity: 12
+Rank: 0.03274
+
+debug_single_step_i
+Importance: 0.0183
+Complexity: 2
+Rank: 0.00915
+
+[3]stall_lsu_i
+Importance: 5.27779
+Complexity: 75
+Rank: 0.07037
+
+[2]debug_ebreaku_i
+Importance: 0.53035
+Complexity: 41
+Rank: 0.01294
+
+[2]dret_insn_i
+Importance: 1.66308
+Complexity: 65
+Rank: 0.02559
+
+[1]ebrk_insn_i
+Importance: 0.42231
+Complexity: 27
+Rank: 0.01564
+
+[1]BOOT_SET
+Importance: 0.11001
+Complexity: 5
+Rank: 0.022
+
+[3]dret_insn
+Importance: 5.31377
+Complexity: 91
+Rank: 0.05839
+
+[3]id_in_ready_o
+Importance: 1.73908
+Complexity: 62
+Rank: 0.02805
+
+[2]IRQ_TAKEN
+Importance: 1.53859
+Complexity: 38
+Rank: 0.04049
+
+[3]nmi_mode_d
+Importance: 1.62824
+Complexity: 49
+Rank: 0.03323
+
+[2]priv_mode_i
+Importance: 0.53035
+Complexity: 41
+Rank: 0.01294
+
+[3]ebreak_into_debug
+Importance: 1.74392
+Complexity: 63
+Rank: 0.02768
+
+[2]ebrk_insn
+Importance: 1.63587
+Complexity: 53
+Rank: 0.03087
+
+debug_req_i
+Importance: 0.0183
+Complexity: 2
+Rank: 0.00915
+
+[2]PRIV_LVL_M
+Importance: 0.53035
+Complexity: 41
+Rank: 0.01294
+
+[3]PRIV_LVL_U
+Importance: 1.74892
+Complexity: 70
+Rank: 0.02498
+
+[2]ctrl_fsm_cs
+Importance: 1.67829
+Complexity: 59
+Rank: 0.02845
+
+[1]DECODE
+Importance: 1.0551
+Complexity: 13
+Rank: 0.08116
+
+[1]mret_insn_i
+Importance: 0.44924
+Complexity: 39
+Rank: 0.01152
+
+[2]csr_mstatus_tw_i
+Importance: 1.66014
+Complexity: 65
+Rank: 0.02554
+
+[1]ctrl_fsm_ns
+Importance: 0.10501
+Complexity: 3
+Rank: 0.035
+
+[1]exc_req_d
+Importance: 0.40965
+Complexity: 17
+Rank: 0.0241
+
+[2]PRIV_LVL_U
+Importance: 0.53035
+Complexity: 41
+Rank: 0.01294
+
+[3]illegal_umode
+Importance: 5.31082
+Complexity: 88
+Rank: 0.06035
+
+[1]illegal_insn_i
+Importance: 0.43114
+Complexity: 30
+Rank: 0.01437
+
+[3]RESET
+Importance: 1.68329
+Complexity: 61
+Rank: 0.02759
+
+[3]ebrk_insn_i
+Importance: 5.29655
+Complexity: 85
+Rank: 0.06231
+
+[1]wfi_insn_i
+Importance: 0.44924
+Complexity: 39
+Rank: 0.01152
+
+[2]exc_req_d
+Importance: 1.62821
+Complexity: 46
+Rank: 0.0354
+
+[1]FLUSH
+Importance: 0.43114
+Complexity: 30
+Rank: 0.01437
+
+[1]illegal_umode
+Importance: 0.43658
+Complexity: 30
+Rank: 0.01455
+
+[3]load_err_i
+Importance: 1.55331
+Complexity: 39
+Rank: 0.03983
+
+[2]debug_ebreakm_i
+Importance: 0.53035
+Complexity: 41
+Rank: 0.01294
+
+[3]csr_mstatus_tw_i
+Importance: 5.31582
+Complexity: 94
+Rank: 0.05655
+
+[3]load_err_d
+Importance: 1.54832
+Complexity: 37
+Rank: 0.04185
+
+[3]enter_debug_mode
+Importance: 7.01604
+Complexity: 70
+Rank: 0.10023
+
+[2]debug_single_step_i
+Importance: 2.14679
+Complexity: 46
+Rank: 0.04667
+
+[1]dret_insn_i
+Importance: 0.44452
+Complexity: 36
+Rank: 0.01235
+
+priv_mode_i
+Importance: 0.02581
+Complexity: 9
+Rank: 0.00287
+
+[2]illegal_dret
+Importance: 1.65042
+Complexity: 59
+Rank: 0.02797
+
+[1]load_err_i
+Importance: 0.4112
+Complexity: 20
+Rank: 0.02056
+
+[2]instr_valid_i
+Importance: 1.64087
+Complexity: 56
+Rank: 0.0293
+
+[1]csr_pipe_flush
+Importance: 0.40637
+Complexity: 17
+Rank: 0.0239
+
+[3]load_err_q
+Importance: 5.19775
+Complexity: 64
+Rank: 0.08121
+
+[2]exc_req_q
+Importance: 1.54168
+Complexity: 35
+Rank: 0.04405
+
+[3]dret_insn_i
+Importance: 5.31877
+Complexity: 94
+Rank: 0.05658
+
+[3]stall_multdiv_i
+Importance: 5.27779
+Complexity: 75
+Rank: 0.07037
+
+[3]SLEEP
+Importance: 1.73476
+Complexity: 63
+Rank: 0.02754
+
+[1]DBG_TAKEN_ID
+Importance: 0.11001
+Complexity: 5
+Rank: 0.022
+
+[2]stall_jump_i
+Importance: 1.6221
+Complexity: 46
+Rank: 0.03526
+
+[1]DBG_TAKEN_IF
+Importance: 0.32003
+Complexity: 9
+Rank: 0.03556
+
+[1]ebrk_insn
+Importance: 0.41731
+Complexity: 24
+Rank: 0.01739
+
+[3]debug_ebreaku_i
+Importance: 1.74892
+Complexity: 70
+Rank: 0.02498
+
+[3]stall_jump_i
+Importance: 5.27779
+Complexity: 75
+Rank: 0.07037
+
+[2]nmi_mode_d
+Importance: 0.40968
+Complexity: 20
+Rank: 0.02048
+
+[3]instr_fetch_err_i
+Importance: 5.29655
+Complexity: 85
+Rank: 0.06231
+
+[1]halt_if
+Importance: 0.12785
+Complexity: 7
+Rank: 0.01826
+
+[2]FIRST_FETCH
+Importance: 1.02739
+Complexity: 36
+Rank: 0.02854
+
+[2]special_req
+Importance: 1.61727
+Complexity: 39
+Rank: 0.04147
+
+[2]csr_pipe_flush_i
+Importance: 1.62993
+Complexity: 49
+Rank: 0.03326
+
+[1]IRQ_TAKEN
+Importance: 0.32003
+Complexity: 9
+Rank: 0.03556
+
+[2]nmi_mode_q
+Importance: 1.62063
+Complexity: 47
+Rank: 0.03448
+
+debug_ebreakm_i
+Importance: 0.02581
+Complexity: 9
+Rank: 0.00287
+
+[3]instr_fetch_err
+Importance: 5.29156
+Complexity: 82
+Rank: 0.06453
+
+[2]stall
+Importance: 1.61711
+Complexity: 41
+Rank: 0.03944
+
+[2]irq_pending_i
+Importance: 1.61647
+Complexity: 47
+Rank: 0.03439
+
+[2]ecall_insn_i
+Importance: 1.64087
+Complexity: 56
+Rank: 0.0293
+
+[3]stall_branch_i
+Importance: 5.27779
+Complexity: 75
+Rank: 0.07037
+
+[2]wfi_insn_i
+Importance: 1.6678
+Complexity: 68
+Rank: 0.02453
+
+[3]debug_mode_d
+Importance: 1.66632
+Complexity: 64
+Rank: 0.02604
+
+[2]RESET
+Importance: 0.46473
+Complexity: 32
+Rank: 0.01452
+
+[2]ebrk_insn_i
+Importance: 1.64087
+Complexity: 56
+Rank: 0.0293
+
+[1]illegal_dret
+Importance: 0.43186
+Complexity: 30
+Rank: 0.0144
+
+[3]BOOT_SET
+Importance: 1.73476
+Complexity: 63
+Rank: 0.02754
+
+[3]store_err_d
+Importance: 1.54832
+Complexity: 37
+Rank: 0.04185
+
+ctrl_fsm_cs
+Importance: 0.05354
+Complexity: 1
+Rank: 0.05354
+
+[3]debug_mode_q
+Importance: 5.31498
+Complexity: 91
+Rank: 0.05841
+
+[1]stall_lsu_i
+Importance: 0.40354
+Complexity: 17
+Rank: 0.02374
+
+[1]debug_ebreakm_i
+Importance: 0.12417
+Complexity: 12
+Rank: 0.01035
+
+[3]wfi_insn_i
+Importance: 5.32348
+Complexity: 97
+Rank: 0.05488
+
+[3]FIRST_FETCH
+Importance: 3.46452
+Complexity: 65
+Rank: 0.0533
+
+[3]exc_req_d
+Importance: 5.28389
+Complexity: 75
+Rank: 0.07045
+
+[2]BOOT_SET
+Importance: 0.5162
+Complexity: 34
+Rank: 0.01518
+
+[3]ctrl_fsm_ns
+Importance: 1.72976
+Complexity: 61
+Rank: 0.02836
+
+[3]csr_pipe_flush
+Importance: 5.28061
+Complexity: 75
+Rank: 0.07041
+
+[1]exc_req_lsu
+Importance: 0.4062
+Complexity: 17
+Rank: 0.02389
+
+[2]illegal_umode
+Importance: 1.65514
+Complexity: 59
+Rank: 0.02805
+
+[3]exc_req_q
+Importance: 5.19737
+Complexity: 64
+Rank: 0.08121
+
+[3]stall
+Importance: 5.27279
+Complexity: 70
+Rank: 0.07533
+

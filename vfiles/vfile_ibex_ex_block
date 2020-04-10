@@ -1,0 +1,3 @@
+../verilog/IBex/ibex_ex_block.v
+../verilog/IBex/ibex_alu.v
+../verilog/IBex/ibex_multdiv_fast.v

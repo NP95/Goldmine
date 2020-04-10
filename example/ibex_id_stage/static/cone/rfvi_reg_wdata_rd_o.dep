@@ -1,0 +1,15 @@
+csr_rdata_i	regfile_wdata
+regfile_wdata_lsu_i	regfile_wdata
+regfile_wdata	rfvi_reg_wdata_rd_o
+decoder_i.sv2v_cast_DB892	decoder_i.opcode
+decoder_i.opcode	decoder_i.regfile_wdata_sel_o
+regfile_wdata_ex_i	regfile_wdata
+decoder_i.RF_WD_CSR	decoder_i.regfile_wdata_sel_o
+decoder_i.RF_WD_LSU	decoder_i.regfile_wdata_sel_o
+decoder_i.instr	decoder_i.opcode
+decoder_i.instr	decoder_i.regfile_wdata_sel_o
+instr_rdata_i	decoder_i.instr_rdata_i
+decoder_i.regfile_wdata_sel_o	regfile_wdata_sel
+decoder_i.RF_WD_EX	decoder_i.regfile_wdata_sel_o
+decoder_i.instr_rdata_i	decoder_i.instr
+regfile_wdata_sel	regfile_wdata

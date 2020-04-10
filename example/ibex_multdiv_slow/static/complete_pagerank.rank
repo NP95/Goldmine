@@ -1,0 +1,54 @@
+    Variable     |      Rank      
+---------------- | ---------------
+ accum_window_d  | 0.0871301954865
+   md_state_d    | 0.0600366623059
+ accum_window_q  | 0.0550160194429
+   md_state_q    | 0.0427884921904
+alu_operand_b_o  | 0.0400121306605
+  op_b_shift_d   | 0.0298081293489
+  op_a_shift_d   | 0.0292090949251
+  op_b_shift_q   | 0.026352960281 
+  op_a_shift_q   | 0.0260538064524
+    valid_o      | 0.0246806019966
+ next_reminder   | 0.0239503527523
+ next_quotient   | 0.023745542905 
+multdiv_state_q  | 0.021667491408 
+ op_numerator_q  | 0.0209849520656
+multdiv_state_d  | 0.020437510468 
+ op_numerator_d  | 0.0190726202245
+alu_operand_a_o  | 0.018992541731 
+is_greater_equal | 0.0174727524011
+   op_a_bw_pp    | 0.0174397242918
+op_a_bw_last_pp  | 0.0174397242918
+multdiv_result_o | 0.0153789324503
+div_change_sign  | 0.0146960448069
+     sign_a      | 0.0145309072682
+     sign_b      | 0.0138704141759
+    op_a_ext     | 0.0137052976602
+  op_remainder   | 0.0136240884549
+    op_b_ext     | 0.0135401751379
+   one_shift     | 0.013276346097 
+multdiv_state_m1 | 0.013276346097 
+  res_adder_h    | 0.0132099210835
+  res_adder_l    | 0.0132099210835
+rem_change_sign  | 0.0123843114755
+      b_0        | 0.0122149630126
+   MD_OP_MULL    | 0.0105679487141
+alu_adder_ext_i  | 0.0105679487141
+    MD_ABS_B     | 0.0105679487141
+    MD_ABS_A     | 0.0105679487141
+ signed_mode_i   | 0.0105679487141
+ equal_to_zero   | 0.0105679487141
+   MD_OP_MULH    | 0.0105679487141
+    MD_LAST      | 0.0105679487141
+   MD_FINISH     | 0.0105679487141
+    MD_COMP      | 0.0105679487141
+    MD_IDLE      | 0.0105679487141
+ MD_CHANGE_SIGN  | 0.0105679487141
+    div_en_i     | 0.0105679487141
+     op_b_i      | 0.0105679487141
+   operator_i    | 0.0105679487141
+   mult_en_i     | 0.0105679487141
+     op_a_i      | 0.0105679487141
+     rst_ni      | 0.0105679487141
+  alu_adder_i    | 0.0105679487141

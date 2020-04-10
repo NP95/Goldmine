@@ -1,0 +1,127 @@
+Report file generated at: Apr-10-2020 12:14:55 AM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a10: (data_we_id == 1) |-> (data_we_ex_o == 1)
+IRank: : 0.00251
+Importance: : 0.00501
+Complexity: : 2
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (instr_rdata_i[1] == 0) |-> (data_we_ex_o == 0)
+IRank: : 0.00181
+Importance: : 0.01992
+Complexity: : 11
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (instr_rdata_i[0] == 0) |-> (data_we_ex_o == 0)
+IRank: : 0.00181
+Importance: : 0.01992
+Complexity: : 11
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (instr_rdata_i[3] == 1) |-> (data_we_ex_o == 0)
+IRank: : 0.00181
+Importance: : 0.01992
+Complexity: : 11
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (instr_rdata_i[2] == 1) |-> (data_we_ex_o == 0)
+IRank: : 0.00181
+Importance: : 0.01992
+Complexity: : 11
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a5: (instr_rdata_i[5] == 0) |-> (data_we_ex_o == 0)
+IRank: : 0.00181
+Importance: : 0.01992
+Complexity: : 11
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (instr_rdata_i[4] == 1) |-> (data_we_ex_o == 0)
+IRank: : 0.00181
+Importance: : 0.01992
+Complexity: : 11
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a7: (instr_rdata_i[7] == 1) |-> (data_we_ex_o == 0)
+IRank: : 0.00181
+Importance: : 0.01992
+Complexity: : 11
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a6: (instr_rdata_i[6] == 1) |-> (data_we_ex_o == 0)
+IRank: : 0.00181
+Importance: : 0.01992
+Complexity: : 11
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a9: (instr_rdata_i[14] == 1) |-> (data_we_ex_o == 0)
+IRank: : 0.00181
+Importance: : 0.01992
+Complexity: : 11
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a8: (instr_rdata_i[8] == 0) |-> (data_we_ex_o == 0)
+IRank: : 0.00181
+Importance: : 0.01992
+Complexity: : 11
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a10       | 0.00251 |  0.00501   |     2      |  Unknown  | Unknown |   Unknown   
+      a1        | 0.00181 |  0.01992   |     11     |  Unknown  | Unknown |   Unknown   
+      a0        | 0.00181 |  0.01992   |     11     |  Unknown  | Unknown |   Unknown   
+      a3        | 0.00181 |  0.01992   |     11     |  Unknown  | Unknown |   Unknown   
+      a2        | 0.00181 |  0.01992   |     11     |  Unknown  | Unknown |   Unknown   
+      a5        | 0.00181 |  0.01992   |     11     |  Unknown  | Unknown |   Unknown   
+      a4        | 0.00181 |  0.01992   |     11     |  Unknown  | Unknown |   Unknown   
+      a7        | 0.00181 |  0.01992   |     11     |  Unknown  | Unknown |   Unknown   
+      a6        | 0.00181 |  0.01992   |     11     |  Unknown  | Unknown |   Unknown   
+      a9        | 0.00181 |  0.01992   |     11     |  Unknown  | Unknown |   Unknown   
+      a8        | 0.00181 |  0.01992   |     11     |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 11
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 11
+Hit rate: 0.0
+Miss rate: 1.0

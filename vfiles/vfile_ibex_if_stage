@@ -1,0 +1,4 @@
+../verilog/IBex/ibex_if_stage.v
+../verilog/IBex/ibex_prefetch_buffer.v
+../verilog/IBex/ibex_compressed_decoder.v
+../verilog/IBex/ibex_fetch_fifo.v

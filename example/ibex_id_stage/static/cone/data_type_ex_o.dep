@@ -1,0 +1,8 @@
+instr_rdata_i	decoder_i.instr_rdata_i
+decoder_i.opcode	decoder_i.data_type_o
+decoder_i.instr	decoder_i.opcode
+decoder_i.instr	decoder_i.data_type_o
+decoder_i.data_type_o	data_type_id
+decoder_i.instr_rdata_i	decoder_i.instr
+decoder_i.sv2v_cast_DB892	decoder_i.opcode
+data_type_id	data_type_ex_o

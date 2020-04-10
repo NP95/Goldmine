@@ -1,0 +1,195 @@
+[1]MD_CHANGE_SIGN
+Importance: 0.26558
+Complexity: 15
+Rank: 0.01771
+
+[2]md_state_q
+Importance: 1.23006
+Complexity: 18
+Rank: 0.06834
+
+[2]MD_LAST
+Importance: 2.4085
+Complexity: 20
+Rank: 0.12042
+
+MD_OP_MULH
+Importance: 0.03525
+Complexity: 9
+Rank: 0.00392
+
+MD_OP_MULL
+Importance: 0.03525
+Complexity: 9
+Rank: 0.00392
+
+[2]mult_en_i
+Importance: 1.19784
+Complexity: 19
+Rank: 0.06304
+
+[2]MD_IDLE
+Importance: 7.20435
+Complexity: 22
+Rank: 0.32747
+
+[2]rst_ni
+Importance: 0.30891
+Complexity: 16
+Rank: 0.01931
+
+[1]MD_COMP
+Importance: 0.52059
+Complexity: 21
+Rank: 0.02479
+
+[1]mult_en_i
+Importance: 2.17817
+Complexity: 13
+Rank: 0.16755
+
+[2]md_state_d
+Importance: 2.39793
+Complexity: 16
+Rank: 0.14987
+
+[2]MD_CHANGE_SIGN
+Importance: 4.80643
+Complexity: 20
+Rank: 0.24032
+
+md_state_q
+Importance: 0.06747
+Complexity: 9
+Rank: 0.0075
+
+[2]MD_ABS_A
+Importance: 4.80643
+Complexity: 24
+Rank: 0.20027
+
+[2]MD_ABS_B
+Importance: 2.4085
+Complexity: 18
+Rank: 0.13381
+
+[1]MD_IDLE
+Importance: 0.39309
+Complexity: 17
+Rank: 0.02312
+
+[1]equal_to_zero
+Importance: 0.26558
+Complexity: 19
+Rank: 0.01398
+
+[2]multdiv_state_q
+Importance: 0.20455
+Complexity: 21
+Rank: 0.00974
+
+[2]div_en_i
+Importance: 1.19784
+Complexity: 19
+Rank: 0.06304
+
+[1]rst_ni
+Importance: 0.14551
+Complexity: 10
+Rank: 0.01455
+
+[1]MD_LAST
+Importance: 0.13807
+Complexity: 15
+Rank: 0.0092
+
+[1]operator_i
+Importance: 1.03061
+Complexity: 13
+Rank: 0.07928
+
+MD_LAST
+Importance: 0.03525
+Complexity: 9
+Rank: 0.00392
+
+MD_FINISH
+Importance: 0.03525
+Complexity: 9
+Rank: 0.00392
+
+[2]multdiv_state_d
+Importance: 0.16961
+Complexity: 17
+Rank: 0.00998
+
+[1]div_en_i
+Importance: 2.17817
+Complexity: 13
+Rank: 0.16755
+
+[2]operator_i
+Importance: 19.194
+Complexity: 18
+Rank: 1.06633
+
+valid_o
+Importance: 0.02468
+Complexity: 0
+Rank: 0.0
+
+[1]multdiv_state_q
+Importance: 0.14917
+Complexity: 15
+Rank: 0.00994
+
+[2]MD_COMP
+Importance: 9.60228
+Complexity: 26
+Rank: 0.36932
+
+[2]multdiv_state_m1
+Importance: 0.18289
+Complexity: 19
+Rank: 0.00963
+
+[1]md_state_d
+Importance: 0.12751
+Complexity: 11
+Rank: 0.01159
+
+[2]equal_to_zero
+Importance: 4.80643
+Complexity: 24
+Rank: 0.20027
+
+[1]MD_ABS_A
+Importance: 0.26558
+Complexity: 19
+Rank: 0.01398
+
+operator_i
+Importance: 0.03525
+Complexity: 9
+Rank: 0.00392
+
+[1]MD_ABS_B
+Importance: 0.13807
+Complexity: 13
+Rank: 0.01062
+
+[1]MD_FINISH
+Importance: 0.39309
+Complexity: 21
+Rank: 0.01872
+
+[2]MD_FINISH
+Importance: 7.20435
+Complexity: 26
+Rank: 0.27709
+
+[1]md_state_q
+Importance: 2.33789
+Complexity: 14
+Rank: 0.16699
+

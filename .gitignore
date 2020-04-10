@@ -1,0 +1,8 @@
+*.pyc
+*.so
+*.c
+src/vcd_parser/build/
+doc
+parser.out
+parsetab.py
+RunTime

@@ -1,0 +1,13 @@
+NUM_WORDS	rf_reg
+NUM_WORDS	rdata_b_o
+NUM_WORDS	rf_reg_tmp
+NUM_WORDS	rdata_a_o
+raddr_b_i	rdata_b_o
+rst_ni	rf_reg_tmp
+raddr_a_i	rdata_a_o
+rf_reg	rdata_b_o
+rf_reg	rdata_a_o
+rf_reg_tmp	rf_reg
+DataWidth	rf_reg
+DataWidth	rdata_b_o
+DataWidth	rdata_a_o

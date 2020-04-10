@@ -1,0 +1,195 @@
+data_req_dec
+Importance: 0.007
+Complexity: 4
+Rank: 0.00175
+
+decoder_i.illegal_c_insn_i
+Importance: 0.01461
+Complexity: 6
+Rank: 0.00244
+
+[1]decoder_i.instr_rdata_i
+Importance: 0.04566
+Complexity: 16
+Rank: 0.00285
+
+[1]id_wb_fsm_ns
+Importance: 0.01495
+Complexity: 3
+Rank: 0.00498
+
+[1]branch_decision_i
+Importance: 0.01644
+Complexity: 7
+Rank: 0.00235
+
+lsu_valid_i
+Importance: 0.00382
+Complexity: 4
+Rank: 0.00096
+
+decoder_i.data_req_o
+Importance: 0.00871
+Complexity: 4
+Rank: 0.00218
+
+decoder_i.instr
+Importance: 0.01855
+Complexity: 11
+Rank: 0.00169
+
+branch_decision_i
+Importance: 0.00382
+Complexity: 2
+Rank: 0.00191
+
+id_wb_fsm_cs
+Importance: 0.01092
+Complexity: 1
+Rank: 0.01092
+
+decoder_i.instr_rdata_i
+Importance: 0.02042
+Complexity: 13
+Rank: 0.00157
+
+[1]IDLE
+Importance: 0.03139
+Complexity: 9
+Rank: 0.00349
+
+[1]id_wb_fsm_cs
+Importance: 0.10857
+Complexity: 6
+Rank: 0.01809
+
+instr_fetch_err_i
+Importance: 0.00615
+Complexity: 2
+Rank: 0.00307
+
+[1]decoder_i.opcode
+Importance: 0.04136
+Complexity: 11
+Rank: 0.00376
+
+decoder_i.opcode
+Importance: 0.01612
+Complexity: 8
+Rank: 0.00202
+
+[1]decoder_i.data_req_o
+Importance: 0.03395
+Complexity: 7
+Rank: 0.00485
+
+decoder_i.csr_illegal
+Importance: 0.01388
+Complexity: 7
+Rank: 0.00198
+
+[1]instr_rdata_i
+Importance: 0.04716
+Complexity: 16
+Rank: 0.00295
+
+[1]instr_new_i
+Importance: 0.06128
+Complexity: 5
+Rank: 0.01226
+
+[1]rst_ni
+Importance: 0.02334
+Complexity: 2
+Rank: 0.01167
+
+[1]illegal_c_insn_i
+Importance: 0.04135
+Complexity: 9
+Rank: 0.00459
+
+decoder_i.sv2v_cast_DB892
+Importance: 0.01762
+Complexity: 11
+Rank: 0.0016
+
+[1]decoder_i.sv2v_cast_DB892
+Importance: 0.04286
+Complexity: 14
+Rank: 0.00306
+
+[1]lsu_valid_i
+Importance: 0.01644
+Complexity: 7
+Rank: 0.00235
+
+instr_new_i
+Importance: 0.00615
+Complexity: 2
+Rank: 0.00307
+
+[1]decoder_i.instr
+Importance: 0.04379
+Complexity: 14
+Rank: 0.00313
+
+[1]data_req_dec
+Importance: 0.03224
+Complexity: 7
+Rank: 0.00461
+
+[1]decoder_i.illegal_c_insn_i
+Importance: 0.03985
+Complexity: 9
+Rank: 0.00443
+
+[1]decoder_i.illegal_insn
+Importance: 0.03761
+Complexity: 8
+Rank: 0.0047
+
+instr_rdata_i
+Importance: 0.02192
+Complexity: 13
+Rank: 0.00169
+
+illegal_c_insn_i
+Importance: 0.01611
+Complexity: 6
+Rank: 0.00268
+
+[1]ex_valid_i
+Importance: 0.01644
+Complexity: 7
+Rank: 0.00235
+
+[1]decoder_i.csr_illegal
+Importance: 0.03912
+Complexity: 10
+Rank: 0.00391
+
+instr_ret_o
+Importance: 0.00233
+Complexity: 0
+Rank: 0.0
+
+[1]WAIT_MULTICYCLE
+Importance: 0.06128
+Complexity: 13
+Rank: 0.00471
+
+[1]instr_fetch_err_i
+Importance: 0.06128
+Complexity: 5
+Rank: 0.01226
+
+ex_valid_i
+Importance: 0.00382
+Complexity: 4
+Rank: 0.00096
+
+decoder_i.illegal_insn
+Importance: 0.01237
+Complexity: 5
+Rank: 0.00247
+

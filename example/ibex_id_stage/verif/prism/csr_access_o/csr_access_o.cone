@@ -1,0 +1,55 @@
+instr_rdata_i
+Importance: 0.01664
+Complexity: 9
+Rank: 0.00185
+
+decoder_i.illegal_c_insn_i
+Importance: 0.00933
+Complexity: 2
+Rank: 0.00467
+
+csr_access_o
+Importance: 0.00171
+Complexity: 0
+Rank: 0.0
+
+illegal_c_insn_i
+Importance: 0.01083
+Complexity: 2
+Rank: 0.00541
+
+decoder_i.opcode
+Importance: 0.01084
+Complexity: 4
+Rank: 0.00271
+
+decoder_i.instr
+Importance: 0.01328
+Complexity: 7
+Rank: 0.0019
+
+decoder_i.csr_illegal
+Importance: 0.0086
+Complexity: 3
+Rank: 0.00287
+
+decoder_i.csr_access_o
+Importance: 0.00343
+Complexity: 0
+Rank: 0.0
+
+decoder_i.instr_rdata_i
+Importance: 0.01515
+Complexity: 9
+Rank: 0.00168
+
+decoder_i.sv2v_cast_DB892
+Importance: 0.01234
+Complexity: 7
+Rank: 0.00176
+
+decoder_i.illegal_insn
+Importance: 0.00709
+Complexity: 1
+Rank: 0.00709
+

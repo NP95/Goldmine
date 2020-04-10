@@ -1,0 +1,140 @@
+decoder_i.regfile_we
+Importance: 0.01664
+Complexity: 16
+Rank: 0.00104
+
+decoder_i.illegal_c_insn_i
+Importance: 0.02254
+Complexity: 18
+Rank: 0.00125
+
+decoder_i.instr_new_i
+Importance: 0.10967
+Complexity: 19
+Rank: 0.00577
+
+decoder_i.instr
+Importance: 0.02649
+Complexity: 23
+Rank: 0.00115
+
+decoder_i.illegal_insn_o
+Importance: 0.00963
+Complexity: 4
+Rank: 0.00241
+
+decoder_i.instr_rdata_i
+Importance: 0.02836
+Complexity: 25
+Rank: 0.00113
+
+decoder_i.alu_op_b_mux_sel_o
+Importance: 0.01802
+Complexity: 16
+Rank: 0.00113
+
+decoder_i.OP_A_REG_A
+Importance: 0.88326
+Complexity: 34
+Rank: 0.02598
+
+decoder_i.OP_A_CURRPC
+Importance: 0.11406
+Complexity: 28
+Rank: 0.00407
+
+decoder_i.alu_op_a_mux_sel_o
+Importance: 0.01876
+Complexity: 16
+Rank: 0.00117
+
+decoder_i.csr_illegal
+Importance: 0.02181
+Complexity: 19
+Rank: 0.00115
+
+decoder_i.regfile_raddr_b_o
+Importance: 0.01616
+Complexity: 16
+Rank: 0.00101
+
+decoder_i.sv2v_cast_DB892
+Importance: 0.02555
+Complexity: 23
+Rank: 0.00111
+
+decoder_i.OP_B_IMM
+Importance: 0.70437
+Complexity: 46
+Rank: 0.01531
+
+instr_valid_i
+Importance: 0.00522
+Complexity: 4
+Rank: 0.00131
+
+illegal_insn_dec
+Importance: 0.00669
+Complexity: 4
+Rank: 0.00167
+
+decoder_i.OP_A_IMM
+Importance: 0.05778
+Complexity: 22
+Rank: 0.00263
+
+instr_new_i
+Importance: 0.11117
+Complexity: 19
+Rank: 0.00585
+
+illegal_insn_o
+Importance: 0.00373
+Complexity: 0
+Rank: 0.0
+
+decoder_i.regfile_raddr_a_o
+Importance: 0.01616
+Complexity: 16
+Rank: 0.00101
+
+instr_rdata_i
+Importance: 0.02985
+Complexity: 25
+Rank: 0.00119
+
+illegal_c_insn_i
+Importance: 0.02404
+Complexity: 18
+Rank: 0.00134
+
+decoder_i.OP_B_REG_B
+Importance: 0.39799
+Complexity: 22
+Rank: 0.01809
+
+decoder_i.illegal_reg_rv32e
+Importance: 0.01466
+Complexity: 7
+Rank: 0.00209
+
+decoder_i.opcode
+Importance: 0.02405
+Complexity: 20
+Rank: 0.0012
+
+decoder_i.regfile_waddr_o
+Importance: 0.01616
+Complexity: 16
+Rank: 0.00101
+
+illegal_csr_insn_i
+Importance: 0.00522
+Complexity: 4
+Rank: 0.00131
+
+decoder_i.illegal_insn
+Importance: 0.0203
+Complexity: 17
+Rank: 0.00119
+

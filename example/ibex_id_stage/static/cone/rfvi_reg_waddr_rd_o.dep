@@ -1,0 +1,5 @@
+instr_rdata_i	decoder_i.instr_rdata_i
+regfile_waddr	rfvi_reg_waddr_rd_o
+decoder_i.regfile_waddr_o	regfile_waddr
+decoder_i.instr	decoder_i.regfile_waddr_o
+decoder_i.instr_rdata_i	decoder_i.instr
