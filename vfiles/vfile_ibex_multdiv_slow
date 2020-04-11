@@ -1,1 +1,3 @@
+# The location of the Verilog file(s) has to be relative with respect to the RunTime directory.
+# It could be absolute path of the Verilog file(s)
 ../verilog/IBex/ibex_multdiv_slow.v

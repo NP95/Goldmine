@@ -27,13 +27,8 @@ from assertion_miner.miner import miner, analyze_manual_assertions
 
 if __name__ == "__main__":
 
-    #css()
-
     parser = ArgumentParser()
 
-    parser.add_argument("-a", "--aggregate", action="store_true",
-                      help="Aggregate rankings for assertion importance, complexity, coverage and complexity",
-                      dest="aggregate")
     parser.add_argument("-m", "--module", help="Top module of the design", dest="top", required=True)
     # NOTE: Changing required=True. If no clock name supplied, a default clock with posedge would \
     #       be assumed by GoldMine.
@@ -43,7 +38,8 @@ if __name__ == "__main__":
     parser.add_argument("-r", "--reset", help="Reset signal", dest="reset", default='DEFAULT_RESET:1')
     parser.add_argument("-p", "--parse", action="store_true", \
                       help="Parse the verilog file(s) and exit", dest="parse")
-    parser.add_argument("-e", "--engine", help="Assertion mining engine", dest="engine", default='')
+    parser.add_argument("-e", "--engine", help="Assertion mining engine. Default engine is PRISM", \
+            dest="engine", default='')
     parser.add_argument("-u", "--configuration_file_loc", help="GoldMine configuration file \
                       location", dest="config_loc", required=True)
     parser.add_argument("-v", "--vcd", help="VCD File(s)", dest="vcd", default='')
@@ -61,6 +57,9 @@ if __name__ == "__main__":
                       help="Specify to mine inter modular assertions (significantly slow)", dest="intermodular")
     parser.add_argument("-M", "--manual_assertion", help="File containing user specified assertions", \
             dest="man_assertion_file", default='')
+    parser.add_argument("-a", "--aggregate", action="store_true",
+                      help="Aggregate rankings for assertion importance, complexity, coverage and complexity",
+                      dest="aggregate")
 
     # Specifying mutually exclusive command line options
     group = parser.add_mutually_exclusive_group()
@@ -129,22 +128,11 @@ if __name__ == "__main__":
 
         del ModuleDefs_
     
-    '''    
-    tmp_file = open('code.v', 'w')
-    tmp_file.write(PARSE_INFO[PARSE_INFO.keys()[0]]['pcode'])
-    tmp_file.close()
-    '''
-    
     undefined_modules = list(set(ModuleInstances.keys()) - set(ModuleDefs))
     if undefined_modules:
         fatal_error('Please include definitions for the following modules: ' + \
                 ', '.join(undefined_modules))
     
-    # CONFIRM TOP MODULE EXISTS IN THE AST
-    #Top_Modules = get_top_modules(ModuleInstances)
-    #top_module = ''
-    #if not Top_Modules:
-    #    fatal_error('No top module found')
     if CMD_LINE_OPTIONS['TOP'] in ModuleDefs:
         top_module = CMD_LINE_OPTIONS['TOP']
     else:
@@ -326,14 +314,6 @@ if __name__ == "__main__":
             #pp.pprint(PathSets, path_handle)
             path_handle.close()
         
-            '''
-            PageRankO =  ODict(sorted(PageRank.items(), key=lambda t: t[1], reverse=True))
-            rank_file = current_path() + '/static/' + top_module + '.rank'
-            content = printTable(PageRankO, ['Variable', 'Rank']) 
-            rfile = open(rank_file, 'w')
-            rfile.write(content)
-            rfile.close()
-            '''
         print_newline()
 
         print('Saving static analysis info for complete: ' + top_module)
@@ -444,10 +424,6 @@ if __name__ == "__main__":
     # Time To Mine
     figlet_print('Mining')
     
-    #tf = {'gnt1':['req1','req2','state','[1]req1','[1]req2','[1]state'],
-    #      'gnt2':['req1','req2','state','[1]req1','[1]req2','[1]state']
-    #      }
-
     targets = target_cones.keys()
     
     engine = CMD_LINE_OPTIONS['MENGINE'] if CMD_LINE_OPTIONS['MENGINE'] else CONFIG['engine']

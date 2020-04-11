@@ -46,7 +46,6 @@ def parse(vcd_file_path, top_module, clks, temporal_depth, ELABORATE_INFO, \
                 fatal_error('Cannot open the VCD file at: ' + vcd_file_path)
             vcd_file_contents = vfile.readlines()
             vfile.close()
-            #return parse_vcd_file_slow(vcd_file_contents, top_module, clks, temporal_depth, Ports)
             return parse_vcd_file_fast(vcd_file_contents, top_module, clks, \
                     temporal_depth, ELABORATE_INFO, scope_module_map, INTERMODULAR)
 
@@ -176,16 +175,12 @@ def parse_vcd_file_fast(vcontents, top_module, clks, temporal_depth, ELABORATE_I
 
         #vline = vfile.readline() 
     
-    pp.pprint(signal_table)
-    print(len(signal_table.keys()))
-
     val_pattern = re.compile(r'^#{1}[0-9]+')
     # signals = [signal_table[key] for key in signal_table.keys()]
 
     # The above list comprehension of the signals won't work as we need to do bit blasting for vector signals
     # So follow the below procedure
     signals = []
-    #signal_table_keys_to_remove = []
 
     for key in signal_table.keys():
         signal = signal_table[key]
@@ -223,17 +218,7 @@ def parse_vcd_file_fast(vcontents, top_module, clks, temporal_depth, ELABORATE_I
                 del signal_scalar
         elif signal == 'DEFAULT_CLOCK':
             signals.append(signal)
-        #else:
-        #    signal_table_keys_to_remove.append(key)
 
-    #if signal_table_keys_to_remove:
-    #    for ele in signal_table_keys_to_remove:
-    #        del signal_table[ele]
-    #
-    #del signal_table_keys_to_remove
-
-    print(len(signals))
-    #exit(0)
     # dframe: A list to get the signal values from the VCD trace dump for all the signals
     dframe = []
     for signal in signals:
@@ -324,311 +309,6 @@ def parse_vcd_file_fast(vcontents, top_module, clks, temporal_depth, ELABORATE_I
 
     return rows_, num_rows_, rows_valid_type
     
-def parse_vcd_file_slow(vcontents, top_module, clks, temporal_depth, Ports):
-
-    # clks: expected to be a dictionary with Key: Clock Name and Value = Clock edge (posedge or negedge)
-    print_newline()
-    #vfile = open(vcd_file_path, 'r')
-    #if not vfile:
-    #    fatal_error('Cannot open the VCD file at: ' + vcd_file_path)
-
-    instance_name = top_module + '_'
-    signal_table = {}
-   
-    IPort = Ports['IPort']
-    OPort = Ports['OPort']
-    Reg = Ports['Reg']
-    Wire = Ports['Wire']
-    # We cannot just run a search for scope and upscope since if there are hierarchies, 
-    # signals will get messed up. We still need to maintain the scope of each of the variable.
-    # Do a Push and Pop of the scope
-    # Read line by line in the VCD file
-    version_Stat = False
-    date_Stat = False
-    timescale_Stat = False
-    instance_Stat = False
-    scope = []
-    
-    # This is the line index of the vcontents
-    iindex = 0
-    findex = len(vcontents)
-    # Parsing the signal name, scopes etc
-    #vline = vfile.readline()
-    #while vline:
-
-    for idx in range(iindex, findex):
-        vline = vcontents[idx].lstrip().rstrip()
-        if DATE in vline:
-            date_Stat = True
-        elif VERSION in vline:
-            version_Stat = True
-        elif TSCALE in vline:
-            timescale_Stat = True
-        elif version_Stat or date_Stat or timescale_Stat:
-            if date_Stat:
-                print_info('Parsing VCD file generated on: ' + vline.lstrip().rstrip())
-                date_Stat = False
-            elif version_Stat:
-                print_info('VCD file created by the tool: ' + vline.lstrip().rstrip())
-                version_Stat = False
-            elif timescale_Stat:
-                print_info('Design was simulated using timescale: ' + vline.lstrip().rstrip())
-                timescale_Stat = False
-        elif SCOPE in vline:
-            line = vline.split(' ')
-            scope_name = line[2]
-            scope.append(scope_name)
-            if scope_name == instance_name:
-                instance_Stat = True
-            else:
-                instance_Stat = False
-            del line
-            #print scope
-        elif UPSCOPE in vline:
-            scope.pop()
-        elif VAR in vline and instance_Stat:
-            line = vline.split(' ')
-            signal_symbol = line[3]
-            signal_name = line[4]
-            #signal_table[signal_symbol] = '.'.join(x for x in scope) + '.' + signal_name
-            signal_table[signal_symbol] = signal_name
-            del line
-        elif ENDDEF in vline:
-            iindex = idx + 1
-            break
-
-        #vline = vfile.readline() 
-
-    val_pattern = re.compile(r'^#{1}[0-9]+')
-    # signals = [signal_table[key] for key in signal_table.keys()]
-
-    # The above list comprehension of the signals won't work as we need to do bit blasting for vector signals
-    # So follow the below procedure
-    signals = []
-    
-    for key in signal_table.keys():
-        signal = signal_table[key]
-        if signal in IPort.keys():
-            width = int(IPort[signal])
-            if width == 1:
-                signals.append(signal)
-            else:
-                signal_scalar = [signal + '[' + str(idx) + ']' for idx in range(width)]
-                signals.extend(signal_scalar)
-                del signal_scalar
-        elif signal in OPort.keys():
-            width = int(OPort[signal])
-            if width == 1:
-                signals.append(signal)
-            else:
-                signal_scalar = [signal + '[' + str(idx) + ']' for idx in range(width)]
-                signals.extend(signal_scalar)
-                del signal_scalar
-        elif signal in Reg.keys():
-            width = int(Reg[signal])
-            if width == 1:
-                signals.append(signal)
-            else:
-                signal_scalar = [signal + '[' + str(idx) + ']' for idx in range(width)]
-                signals.extend(signal_scalar)
-                del signal_scalar
-        elif signal in Wire.keys():
-            width = int(Wire[signal])
-            if width == 1:
-                signals.append(signal)
-            else:
-                signal_scalar = [signal + '[' + str(idx) + ']' for idx in range(width)]
-                signals.extend(signal_scalar)
-                del signal_scalar
-    
-    # dframe: a Panda dataframe to get the signal values from the VCD trace dump for all the signals
-    dframe = pd.DataFrame(columns=signals)
-    for signal in signals:
-        dframe[signal] = dframe[signal].astype('str')
-    
-    #vline = vfile.readline()
-    #while vline:
-    for idx in range(iindex, findex):
-        vline = vcontents[idx].lstrip().rstrip()
-        if "#0" in vline:
-            row_vals = {}
-            for signal in signals:
-                row_vals[signal] = ['x']
-            dframe_ = pd.DataFrame.from_dict(row_vals, dtype='str')
-            dframe = dframe.append(dframe_, ignore_index=True)
-            iindex = idx + 1
-            break
-        #vline = vfile.readline()
-   
-    row_id = 0
-    #while vline:
-    trace_data_lines = findex - iindex
-    
-    print_info('Parsing trace data')
-    
-    # Progress Bar Widget for the trace data processing
-    widgets = ['Processed: ', Percentage(), ' ', Bar(marker='>', left='[', right=']'), \
-            ' (', ETA(), ')']
-    pbar = ProgressBar(widgets=widgets)
-    for i in pbar(range(iindex, findex)):
-        vline = vcontents[i].lstrip().rstrip()
-        
-        #percent_completed = 1.0 * (i - iindex) / trace_data_lines * 100
-        #if percent_completed % 5.0 == 0.0:
-        #    print 'Trace data parsing comleted: ' + str(percent_completed / 5.0)
-        
-        if not vline or vline[0] == '$':
-            #vline = vfile.readline()
-            continue
-        elif vline[0] == '#':
-            dtemp = pd.DataFrame()
-            dtemp = dframe.tail(1)
-            dframe = dframe.append(dtemp, ignore_index=True)
-            row_id = row_id + 1
-            #print dframe
-        # TODO: Still need to tackle the bit vectors
-        elif vline[0] == 'b' or vline[0] == 'B':
-            vline_split = vline.split()
-            symbol = vline_split[1]
-            val = vline_split[0][1:]
-            try:
-                signal_name = signal_table[symbol]
-            except KeyError:
-                continue
-            for j in range(len(val)):
-                signal_scalar_name = signal_name + '[' + str(j) + ']'
-                # Assuming the signals are specified in the Big-Endian format
-                dframe[signal_scalar_name][row_id] = val[-1 - j]
-        else:            
-            symbol = vline[1:].lstrip().rstrip()
-            val = vline[0]
-            try:
-                signal_name = signal_table[symbol]
-            except KeyError:
-                continue
-            dframe[signal_name][row_id] = val
-
-        #vline = vfile.readline()
-        
-    #vfile.close()
-    print dframe.shape
-    print_newline()
-    
-    # (rows, columns) in the data parsed from the VCD file
-    shape = dframe.shape
-    #print shape 
-    rows = []
-    result = 0
-    num_rows_ = 0
-    signal_lookback = []
-    for tdepth in range(temporal_depth):
-        for signal in signals:
-            if tdepth == 0:
-                signal_lookback.append(signal)
-            else:
-                signal_lookback.append('[' + str(tdepth) + ']' + signal)
-    #print signal_lookback
-    rows__ = pd.DataFrame(columns=signal_lookback)
-    for signal in signal_lookback:
-        rows__[signal] = rows__[signal].astype('str')
-    #print rows_
-    # Combinational Circuits
-    widgets = ['Processed: ', Percentage(), ' ', Bar(marker='>', left='[', right=']'), \
-            ' (', ETA(), ')']
-    pbar = ProgressBar(widgets=widgets)
-
-    if not clks.keys():
-        # TODO: Write the code for the data manipulation for the data for combinational circuits
-        # print "Combinational Circuits"
-        print_info('Creating time shifted data for Combinational circuit type')
-        for idx0 in pbar(range(shape[0])):
-            row_values = []
-            for idx4 in range(shape[1]):
-                row_values.append(dframe[idx4][idx0])
-
-            rows.append(row_values)
-            rows_unique = uniquify(rows)
-
-            if len(rows_unique) < len(rows):
-                rows = rows_unique
-                continue
-            
-            rows = rows_unique
-            num_rows_ = num_rows_ + 1
-            row_dict = {}
-            for idx5 in range(len(signals)):
-                row_dict[signals[idx5]] = [row_values[idx5]]
-            rows_frame = pd.DataFrame.from_dict(row_dict, dtype='str')
-
-            rows__ = rows__.append(rows_frame, ignore_index=True)
-
-            result = result + 1
-    # Sequential Circuits
-    else:
-        # We will need the temporal_depth information to use here
-        clk_name = clks.keys()[0]
-        clk_edge_value = int(clks[clk_name])
-        clk_dframe = dframe[clk_name]
-
-        print_info('Creating time shifted data for Sequential circuit type')
-        temporal_frame = []
-
-        for idx1 in pbar(range(shape[0] - 1)):
-            # FIXME: May have issues with X or Z val type. Correction needed
-            curr_clk_val = int(clk_dframe[idx1])
-            next_clk_val = int(clk_dframe[idx1 + 1])
-            if curr_clk_val != clk_edge_value and next_clk_val == clk_edge_value:
-                temporal_frame.append(idx1)
-                #print "Pushed back Idx1: " + str(idx1)
-                if len(temporal_frame) < temporal_depth:
-                    continue
-                row_values = []
-                for idx2 in range(len(temporal_frame)):
-                    row_id = temporal_frame[len(temporal_frame) - idx2 - 1]
-                    #print "Row ID: " + str(row_id)
-                    for signal in signals:
-                        row_values.append(dframe[signal][row_id])
-                # Delete the first temporal frame. So that in next iteration next frame index
-                # can be added
-                del temporal_frame[0]
-
-                rows.append(row_values)
-                #rows_unique = list(map(list, set(map(lambda i: tuple(i), rows))))
-                #rows_unique = [list(x) for x in set(tuple(x) for x in rows)]
-                rows_unique = uniquify(rows)
-
-                if len(rows_unique) < len(rows):
-                    rows = rows_unique
-                    continue
-
-                #print row_values
-                # locally checking if any new rows of values can be added or not 
-                rows = rows_unique
-
-                num_rows_ = num_rows_ + 1
-                row_dict = {}
-                for idx3 in range(len(signal_lookback)):
-                    row_dict[signal_lookback[idx3]] = [row_values[idx3]]
-                rows_frame = pd.DataFrame.from_dict(row_dict, dtype='str')
-
-                rows__ = rows__.append(rows_frame, ignore_index=True)
-                #print rows_
-                #if num_rows_ == 4:
-                #    exit(0)
-
-                result = result + 1
-    
-    rows_ = pd.DataFrame()
-    for signal in signal_lookback:
-        rows_ = pd.concat([rows_, rows__[signal]], axis=1)
-    #rows_.to_csv('rows_.csv', index=False)
-    #print 'result: ' + str(result) + ' num_rows_ : ' + str(num_rows_) + '\n'
-    # FIXME: Fix the validate function below
-    rows_valid_type = validate_sim_data(num_rows_ - result, num_rows_, num_rows_, signal_lookback, rows_)
-        
-    #print_info('Total number of trace examples added: ' + str(num_rows_))
-
-    return rows_, num_rows_, rows_valid_type
 
 def uniquify(x):
     concatData = []
@@ -648,34 +328,6 @@ def uniquify(x):
 
     return uniqueList
 
-'''
-def validate_sim_data(first, last, num_rows_, signal_lookback, rows_):
-    
-    widgets = ['Processed: ', Percentage(), ' ', Bar(marker='>', left='[', right=']'), \
-            ' (', ETA(), ')']
-    pbar = ProgressBar(widgets=widgets)
-    
-    print_newline()
-    rows_invalid_type = []
-    
-    if first >= num_rows_ or first >= last:
-        fatal_error('Trace data construction is wrong')
-
-    for i in range(first, last):
-        rows_invalid_type.append('null_invalid_type')
-    
-    print_info('Validating simulation data')
-
-    for signal in pbar(signal_lookback):
-        for j in range(first, last):
-            if rows_invalid_type[j] == 'null_invalid_type':
-                if rows_[signal][j] == 'x' or rows_[signal][j] == 'X' or rows_[signal][j] == 2:
-                    rows_invalid_type[j] = 'x_invalid_type'
-                elif rows_[signal][j] == 'z' or rows_[signal][j] == 'Z' or rows_[signal][j] == 3:
-                    rows_invalid_type[j] = 'z_invalid_type'
-
-    return rows_invalid_type
-'''
 
 def mine_data_valid(csv_dframe):
     # Can we look for at least N = 30 number of data examples in the mining data 
@@ -999,10 +651,3 @@ def simulate(top_module, clks, rsts, verilog_files, include_paths, max_sim_cycle
         remove_directory('.vcsmx_rebuild')
 
     return 
-
-#clks = {'clk':'1'}
-#rsts = {'rst':'1'}
-#inports = ['req1', 'req2', 'rst', 'clk']
-#outports = ['gnt1', 'gnt2']
-#parse('./arb2.vcd', 'arb2', clks, 4)
-#write_testbench('arb2', clks, rsts, inports, outports)

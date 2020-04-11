@@ -9,7 +9,6 @@ from miner_helper import construct_dframe, induct_assertion, print_assertion, se
 from configuration import make_directory
 from decision_tree import decision_tree as dtmine
 from best_gain_decision_forest import best_gain_decision_forest as bgdfmine
-#from assertion_miner.coverage_miner import mine as cminer
 from prism import prism as pmine
 
 
@@ -29,9 +28,6 @@ def analyze_manual_assertions(features, target, CONFIG, top_module, clks, rsts, 
     
     if not fverif:
         figlet_print('Verify')
-    #create_verification_task(target, mined_assertion, 0, CONFIG, top_module, clks, rsts, verilog_files, inc_dir_path)
-    # Assertion_Results is a dictionary. Keys are the assertion index. The Val of a Key is a dictionary
-    # The Val dictionary has all the status
         Assertion_Results = verify(target, verify_assertion, CONFIG, top_module, clks, rsts, \
                 verilog_files, inc_dir_path, engine)
     else:
@@ -107,9 +103,6 @@ def miner(features, target, rows_, rows_invalid_type, CONFIG, top_module, clks, 
     
     if not fverif:
         figlet_print('Verify')
-    #create_verification_task(target, mined_assertion, 0, CONFIG, top_module, clks, rsts, verilog_files, inc_dir_path)
-    # Assertion_Results is a dictionary. Keys are the assertion index. The Val of a Key is a dictionary
-    # The Val dictionary has all the status
         Assertion_Results = verify(target, verify_assertion, CONFIG, top_module, clks, rsts, \
                 verilog_files, inc_dir_path, engine)
     else:

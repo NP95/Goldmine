@@ -9,7 +9,7 @@ GoldMine Tool Command Line Parameters:
     optional arguments:
       -h, --help            show this help message and exit
 	  -a, --aggregate       Aggregate rankings for assertion importance,
-	                        complexity, coverage and complexity
+	                        complexity, coverage and complexity (BETA phase)
 	  -m TOP, --module TOP  Top module of the design
 	  -c CLOCK, --clock CLOCK
 	                        Clock signal
@@ -45,11 +45,11 @@ GoldMine Configuration File goldmine.cfg explanation
 
 	vcs_home :: Installation directory of Synopsys VCS tool
 	
-	synopsys_licesne :: Synopsys license string
+	synopsys_license :: Synopsys license string
 	
 	ifv_root :: Installation directory of Cadence IFV tool
 	
-	cadence_licesne :: Cadence license string
+	cadence_license :: Cadence license string
 	
 	iverilog_home :: Installation directory of IVerilog executable
 	
@@ -93,33 +93,28 @@ How to use Docker container (Preferred method):
 
     git clone https://debjitp@bitbucket.org/debjitp/goldminer.git
     cd goldmine
+    vi goldmine.cfg (Edit goldmine.cfg to setup VCS/IVerilog/IFV location, VCS/IFV license string)
     mkdir -pv RunTime
     cd RunTime
-    ln -s ../run_ibex.sh
+    ln -s ../run_goldmine.sh
     ln -s ../vfiles
     cd ..
     sh build_docker.sh
 
-When above procedure is finished, your Docker container should be up and ruuning. Once Docker container is active do the following to build the VCD parser:
+When above procedure is finished, your Docker container should be up and running. Once Docker container is active do the following to build the VCD parser:
 
-    i) cd src/vcd_parser
-    ii) python setup.py build_ext --inplace
-    iii) ln -s ./vcd_parser/parse_timeframes.so 
-    iv) cd ..
-    v) python goldmine.py -h
-    vi) cd ..
-    vii) mkdir -pv RunTime
-    viii) cd RunTime
-    ix) ln -s ../run_ibex.sh
-    x) ln -s ../vfiles
-    xi) sh run_ibex.sh
-
+    cd src/vcd_parser
+    python setup.py build_ext --inplace
+    ln -s ./vcd_parser/parse_timeframes.so 
+    cd ../../RunTime
+    python ../src/goldmine.py -h
+    sh run_goldmine.sh
 
 Before you exit Docker container, please make sure you have copied the generated data from the container to your host machine. Once you exit Docker, any data created within Docker container is lost forever.
 
 ##############################################################################
 
-How to use Anaconda Python environment
+How to use Anaconda Python environment (Recommended):
 
     1. For Anaconda, Anaconda 2.7.X / Python 2.7.X is needed. It can be downloaded from https://repo.anaconda.com/archive/Anaconda2-2019.10-Linux-x86_64.sh (Please visit https://www.anaconda.com/distribution/#download-section for the latest download linki for Linux/Mac)
     2. Install Anaconda into a user space where new environment can be created
@@ -132,18 +127,17 @@ How to use Anaconda Python environment
         iv) Once the conda environemnt is set, please do the following:
             wget https://www.dropbox.com/s/e1wf6vh64v9tpf1/pyverilog_customized.tar.gz?dl=0 -O ~/Downloads/pyverilog.tar.gz
             cd ~/Downloads
-            tar -xzvf pyverilog.tar.gz <Anaconda_Installation_Dir>/envs/goldmine/lib/python2.7/site-packages
+            tar -xzvf pyverilog.tar.gz -C <Anaconda_Installation_Dir>/envs/goldmine/lib/python2.7/site-packages
             cd <goldmine_clone_directory>/src/vcd_parser
             python setup.py build_ext --inplace
             ln -s ./vcd_parser/parse_timeframes.so
-            cd ..
-            python goldmine.py -h
-            cd ..
+            cd ../../
             mkdir -pv RunTime
             cd RunTime
-            ln -s ../run_ibex.sh
+            python ../src/goldmine.py -h
+            ln -s ../run_goldmine.sh
             ln -s ../vfiles
-            sh run_ibex.sh
+            sh run_goldmine.sh
                 
 ##############################################################################
 
@@ -189,9 +183,17 @@ How to report an issue?
 ##############################################################################
 
 FAQs and tips
+    
+    0. GoldMine can only accept Verilog designs as it uses a Verilog parser at the backend. GoldMine does not accept SystmeVerilog designs.
+    1. GoldMine can mine assertions for both sequential and combinational designs. However it can only mine assertions for single bit target variable. For example, if you have the following set of outputs,
+        
+        output A;
+        output [3:0] B;
 
-    1. We DO NOT support 2-dimesnioanl registers as of now. It has been planned for future release.
-    2. All vector signals (including input/output/register/wire) must have explicit numerical values of the
+        GoldMine will be able to mine assertions for the output/target variable A but not for output/target variable B.
+        
+    2. We DO NOT support 2-dimesnional registers as of now. It has been planned for future release.
+    3. All vector signals (including input/output/register/wire) must have explicit numerical values of the
        MSB and LSBs
-    3. We provide several formal verification IPs that can be used to formally verify the assertions. They are tuned for Cadence IFV. In case, you want to use a different formal verifier, please use those APIs and modify the internal functions to suit the format of the formal verifier used.
+    4. We provide several formal verification IPs that can be used to formally verify the assertions. They are tuned for Cadence IFV. In case, you want to use a different formal verifier, please use those APIs and modify the internal functions to suit the format of the formal verifier used.
     4. Please go through the example directory to inspect different verilog codes and expected outputs for some sample designs.

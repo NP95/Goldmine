@@ -167,10 +167,8 @@ def parse_assertion_file(filename, top_module):
       assertion_tables[label] = (assertion_table, assertion_string)
    return assertion_tables
       
-      
-      
-
-
+'''
 if __name__ == '__main__':
    table = parse_assertion_file(sys.argv[1])
    pprint(table)
+'''

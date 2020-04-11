@@ -377,13 +377,6 @@ def analyze_for_aggregation(target, rank_assertion, cone, engine, verilog_files,
 
     return ARank, IRank, SRank, AImportance, AComplexity
 
-#def ideality():
-#
-#    return
-
-#def expectedness():
-#
-#    return
 
 def kemeny_young_approx(Ranking):
     # Ranking:  It is expected as a dictionary where each key of the dictionary is a ranking metric
