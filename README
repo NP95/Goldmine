@@ -6,28 +6,28 @@ GoldMine Tool Command Line Parameters:
                        CONFIG_LOC [-v VCD] [-t TARGETV] [-T] [-I INCLUDE] [-V]
                        [-S] [-M MAN_ASSERTION_FILE] [-f FILE_LOC | -F LFILE]
 
-    optional arguments:
-      -h, --help            show this help message and exit
+    arguments:
+      -h, --help            Gives list of arguments and exits
 	  -a, --aggregate       Aggregate rankings for assertion importance,
 	                        complexity, coverage and complexity (BETA phase)
-	  -m TOP, --module TOP  Top module of the design
+	  -m TOP, --module TOP  Top module of the design (Mandatory arguments)
 	  -c CLOCK, --clock CLOCK
 	                        Clock signal
 	  -r RESET, --reset RESET
 	                        Reset signal
 	  -p, --parse           Parse the verilog file(s) and exit
 	  -e ENGINE, --engine ENGINE
-	                        Assertion mining engine
+	                        Assertion mining engine (Default engine is PRISM)
 	  -u CONFIG_LOC, --configuration_file_loc CONFIG_LOC
-	                        GoldMine configuration file location
+	                        GoldMine configuration file location (Mandatory arguments)
 	  -v VCD, --vcd VCD     VCD File(s)
 	  -t TARGETV, --targets TARGETV
 	                        Target variables seperated by comma for assertions
-	                        mining
+	                        mining*
 	  -I INCLUDE, --include INCLUDE
-	                        Include Path
+	                        Include Path for Verilog `include files
 	  -V, --verification    Specify to skip formal verification
-	  -S, --static_dump     Specify to dump static analysis info and graphics
+	  -S, --static_dump     Specify to dump static analysis results
       -N, --inter_modular   Specify to mine inter modular assertions
                             (significantly slow)
 	  -M MAN_ASSERTION_FILE, --manual_assertion MAN_ASSERTION_FILE
@@ -36,9 +36,9 @@ GoldMine Tool Command Line Parameters:
 	                        Location containing source Verilog files
 	  -F LFILE, --file_list LFILE
 	                        A file containing name of verilog files with absolute
-	                        path , one file in every line
+	                        path, one file in every line
 
-
+    * To understand target variable, please read the paper: https://ieeexplore.ieee.org/document/6516599/
 #############################################################################
 
 GoldMine Configuration File goldmine.cfg explanation
@@ -56,21 +56,21 @@ GoldMine Configuration File goldmine.cfg explanation
 	engine :: Default mining engine. If no engine is specified in the command line,
 	          this engine will be used for mining.
 	
-	max_sim_cycles :: maximum number of cycles for which simulation trace data to be generated
+	max_sim_cycles :: maximum number of cycles for which simulation trace data is generated
 	
 	num_cycles :: maximum temporal depth of the generated assertions
 	
 	num_propositions :: maximum number of propositions allowed in the antecedent of the assertions
-	                    (not used in current implementation. Future enhancement)
+	                    (To be implemented. Future enhancement)
 	
 	num_counterexamples :: Maximum number of counter-examples to be used to refine an assertion
-	                       (not used in current implementation. Future enhancement) 
+	                       (To be implemented. Future enhancement) 
 	
-	num_partitions :: Decision forest parametrs (not used in current implementation.
+	num_partitions :: Decision forest parametrs (To be implemented.
 	                  Future enhancement)
 	
 	min_coverage :: Coverage miner parameters. (Will be used when Coverage Miner is integrated
-	                as one of the mining algorithm)
+	                as one of the mining algorithms)
 
 
 #############################################################################
@@ -78,7 +78,7 @@ GoldMine Configuration File goldmine.cfg explanation
 3rd-Party Tool Requirements:
 
     Synopsys Verilog Compiler Simulator / IVerilog
-        GoldMine uses VCS /IVerilog is to generate random simulation data. GoldMine can
+        GoldMine uses VCS /IVerilog to generate random simulation data. GoldMine can
         accept VCD files on the command line if VCS/IVerilog is not available. 
     
     Cadence Incisive Formal Verifier
@@ -132,6 +132,7 @@ How to use Anaconda Python environment (Recommended):
             python setup.py build_ext --inplace
             ln -s ./vcd_parser/parse_timeframes.so
             cd ../../
+            vi goldmine.cfg (Edit goldmine.cfg to setup VCS/IVerilog/IFV location, VCS/IFV license string)
             mkdir -pv RunTime
             cd RunTime
             python ../src/goldmine.py -h
@@ -192,8 +193,9 @@ FAQs and tips
 
         GoldMine will be able to mine assertions for the output/target variable A but not for output/target variable B.
         
-    2. We DO NOT support 2-dimesnional registers as of now. It has been planned for future release.
+    2. We DO NOT support 2-dimensional registers as of now. It has been planned for future release.
     3. All vector signals (including input/output/register/wire) must have explicit numerical values of the
        MSB and LSBs
     4. We provide several formal verification IPs that can be used to formally verify the assertions. They are tuned for Cadence IFV. In case, you want to use a different formal verifier, please use those APIs and modify the internal functions to suit the format of the formal verifier used.
-    4. Please go through the example directory to inspect different verilog codes and expected outputs for some sample designs.
+    5. Please go through the example directory to inspect different verilog codes and expected outputs for some sample designs.
+    6. All GoldMine related papers are available at https://sites.google.com/view/goldmine-illinois/publications?authuser=0

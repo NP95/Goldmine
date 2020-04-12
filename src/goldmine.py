@@ -48,11 +48,11 @@ if __name__ == "__main__":
     parser.add_argument("-T", "--target_vectors", action="store_true", \
                       help="Target vector variables", default=False, dest="vectorf")
     parser.add_argument("-I", "--include", dest="include", action="append", \
-                        default=[], help="Include Path")
+                        default=[], help="Include Path for Verilog `include files")
     parser.add_argument("-V", "--verification", action="store_false", \
                       help="Specify to skip formal verification", dest="verif")
     parser.add_argument("-S", "--static_dump", action="store_true",\
-                      help="Specify to dump static analysis info and graphics and exit", dest="staticgraph")
+                      help="Specify to dump static analysis results", dest="staticgraph")
     parser.add_argument("-N", "--inter_modular", action="store_true",\
                       help="Specify to mine inter modular assertions (significantly slow)", dest="intermodular")
     parser.add_argument("-M", "--manual_assertion", help="File containing user specified assertions", \
