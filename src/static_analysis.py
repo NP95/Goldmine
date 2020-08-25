@@ -537,8 +537,8 @@ def plot_digraph(digraphs, curr_path, root):
             file_name = curr_path + '/' + root_node[0] + '.dot'
             write_dot(digraph, file_name)
             pdf_file_name = file_name[:file_name.rfind('.')] + '.pdf'
-            dot_command = 'dot -Tpdf ' + file_name + ' -o ' + pdf_file_name + ' && rm -rfv ' + file_name
-            #dot_command = 'dot -Tpdf ' + file_name + ' -o ' + pdf_file_name
+            #dot_command = 'dot -Tpdf ' + file_name + ' -o ' + pdf_file_name + ' && rm -rfv ' + file_name
+            dot_command = 'dot -Tpdf ' + file_name + ' -o ' + pdf_file_name
             #print dot_command
             exec_command(dot_command, 'PIPE', 'PIPE')
     return
@@ -1515,6 +1515,15 @@ def Linking(ELABORATE_INFO, top_module):
             for cnode in fused_CDFG.nodes():
                 mapping[cnode] = '.'.join(nxt_scope) + '.' + cnode
             fused_CDFG = nx.relabel_nodes(fused_CDFG, mapping)
+            ##### This is a hack to tackle the labels. Cant think a better one now.
+            ##### FIX it later if possible
+            for node_ in fused_CDFG.nodes():
+                l = fused_CDFG.node[node_]['label']
+                l_split = l.split('\n')
+                l_split[0] = node_
+                fused_CDFG.node[node_]['label'] = '\n'.join(l_split)
+            ##### This is a hack to tackle the labels. Cant think a better one now.
+            ##### FIX it later if possible
             del mapping
             
             # NOTE: Linking the variable dependency graph of the top module
@@ -1604,6 +1613,8 @@ def Linking(ELABORATE_INFO, top_module):
         for p in predecessors:
             for s in successors:
                 complete_fused_CDFG.add_edge(p, s)
+
+        complete_fused_CDFG.remove_node(enode)
 
     return complete_dep_g, complete_fused_CDFG, scope_module_map
 
