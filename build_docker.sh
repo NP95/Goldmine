@@ -13,8 +13,12 @@ then
 		export DOCKER_BUILDKIT=1
 	fi
 	docker build --network=host -t $USER/pgoldmine .
-	docker run -it $USER/pgoldmine:latest /bin/bash
+	docker run -v $PWD:/opt/goldmine \
+               -it $USER/pgoldmine:latest \
+               /bin/bash
 else
 	docker build --network=host -t $USER/pgoldmine .
-	docker run -it $USER/pgoldmine:latest /bin/bash
+	docker run -v $pwd:/opt/goldmine \
+               -it $USER/pgoldmine:latest \
+               /bin/bash
 fi

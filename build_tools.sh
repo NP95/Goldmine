@@ -2,7 +2,7 @@
 
 PROC=64
 
-## Make tool installation directory
+### Make tool installation directory
 mkdir -pv tool
 cd tool
 
@@ -30,7 +30,9 @@ cd yices2
 autoconf
 ./configure
 make -j64
-cd ..
+cd build/x86_64-pc-linux-gnu-release/bin
+ln -s yices_smt2 yices-smt2
+cd ../../../..
 
 ## Z3 instalation
 git clone https://github.com/Z3Prover/z3.git z3
@@ -48,7 +50,7 @@ cd super_prove/bin
 FILE="suprove"
 printf '%s\n' '#!/bin/bash' \
 'tool=super_prove; if [ "$1" != "${1#+}" ]; then tool="${1#+}"; shift; fi' \
-'exec /opt/goldmine/tool/super_prove/bin/${tool}.sh "$@"' > ${FILE}
+'exec /opt/tool/super_prove/bin/${tool}.sh "$@"' > ${FILE}
 /usr/bin/chmod +x ${FILE}
 cd ../..
 
