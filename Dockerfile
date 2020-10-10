@@ -6,7 +6,7 @@ MAINTAINER Debjit Pal <work.debjitpal@gmail.com>
 # Prepping the Fedora Docker container with upgraded packages and base system packages
 RUN dnf clean all
 RUN dnf -y update
-RUN dnf -y install python2 python2-devel python2-pygraphviz gcc gcc-c++ vim-enhanced iverilog wget git make clang flex bison autoconf gperf cmake boost-devel boost-static
+RUN dnf -y install python2 python2-devel python2-pygraphviz gcc gcc-c++ vim-enhanced iverilog wget git make clang flex bison autoconf gperf cmake boost-devel boost-static tmux
 RUN dnf -y install glibc-static
 RUN dnf -y install readline-devel tcl-devel gmp-devel gmp-static libffi-devel
 RUN dnf -y install libcxx-static libcxxabi-static compat-libstdc++-33 compat-libstdc++-33.i686 libstdc++-static
