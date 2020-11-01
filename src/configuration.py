@@ -168,22 +168,20 @@ def set_config_file_path(path_to_config, vcd_stat, is_comb):
     platform_type = platform.machine()
     
     vcs_exe = ''
-    ifv_exe = ''
     iverilog_exe = ''
+    yosys_exe = ''
     # Set to True if VCS is not available
     vcs_stat = False
 
 
     if platform_type == 'x86_64':
         vcs_exe = CONFIG['vcs_home'] + '/amd64/bin/vcs'
-        ifv_exe = CONFIG['ifv_root'] + '/tools/bin/64bit/ifv'
         iverilog_exe = CONFIG['iverilog_home'] + '/iverilog'
     else:
     # a X86 machine can be i386 or i686. Hence just kept as else
         vcs_exe = CONFIG['vcs_home'] + '/bin/vcs'
-        ifv_exe = CONFIG['ifv_root'] + '/tools/bin/ifv'
         iverilog_exe = CONFIG['iverilog_home'] + '/iverilog'
-
+    yosys_exe = CONFIG['yosys_root'] + '/bin/sby'
         
 
     if not os.path.isfile(vcs_exe) or not os.access(vcs_exe, os.X_OK):
@@ -193,11 +191,11 @@ def set_config_file_path(path_to_config, vcd_stat, is_comb):
     else:
         CONFIG['vcs'] = vcs_exe
 
-    if not os.path.isfile(ifv_exe) or not os.access(ifv_exe, os.X_OK):
-        CONFIG['ifv'] = ''
+    if not os.path.isfile(yosys_exe) or not os.access(yosys_exe, os.X_OK):
+        CONFIG['yosys'] = ''
         print_warning('IFV Executable Not Found. Assertion Verification won\'t be possible.')
     else:
-        CONFIG['ifv'] = ifv_exe
+        CONFIG['yosys'] = yosys_exe
 
     if not os.path.isfile(iverilog_exe) or not os.access(iverilog_exe, os.X_OK):
         CONFIG['iverilog'] = ''
