@@ -3,11 +3,11 @@ import pandas as pd
 
 def coverage_miner(features, target, target_feature_df, gmin, gthreshold, cthreshold):
 
-    features = ['a', 'b', 'c']
-    target = 'z'
+    #features = ['a', 'b', 'c']
+    #target = 'z'
     
-    data = [[0,0,0,0], [0,1,1,0], [1,0,1,0], [1,1,0,1]]
-    target_feature_df = pd.DataFrame(data, columns = ['a', 'b', 'c', 'z'])
+    #data = [[0,0,0,0], [0,1,1,0], [1,0,1,0], [1,1,0,1]]
+    #target_feature_df = pd.DataFrame(data, columns = ['a', 'b', 'c', 'z'])
 
     covAs = 0.0
     TRows = target_feature_df.shape[0]
@@ -31,6 +31,8 @@ def coverage_miner(features, target, target_feature_df, gmin, gthreshold, cthres
     '''
     F = create_var_val_pair(features)
     
+    flatten = lambda t: [item for sublist in t for item in sublist]
+
     while True:
         if gmin < gthreshold or covAs > cthreshold:
             break
@@ -40,16 +42,23 @@ def coverage_miner(features, target, target_feature_df, gmin, gthreshold, cthres
             # E: simulation trace. Here target_feature_df
             Ac = []
             Ac = gen_candidates(F, [], target, target_feature_df, Ac, gmin)
-            print(Ac)
+            #print(Ac)
             As, curr_covered_rows = recalibrate_add(Ac, \
                     As, target_feature_df, prev_covered_rows, TRows, gmin)
             gmin = gmin / 2.0
             covAs = 1.0 * len(curr_covered_rows) / TRows
-            print('New coverage: ', covAs)
-            print('New gmin: ', gmin)
-            del Ac
+            #print('New coverage: ', covAs)
+            #print('New gmin: ', gmin)
+            
+            #print(As)
+
+            F_to_remove = flatten([a[0] for a in As])
+
+            F = list(set(F) - set(F_to_remove))
             prev_covered_rows = curr_covered_rows
 
+            del Ac
+    
     return As
 
 
@@ -68,11 +77,11 @@ def gen_candidates(F, P, target, E, Ac, gmin):
         #fi = F.pop()
         if 1.0 * 1 / pow(2, len(list(set(P + [fi])))) >= gmin:
             P_ = list(set(P + [fi]))
-            print('Current gain in gen_candidates: ', 1.0 * 1 / pow(2, len(P_)))
+            #print('Current gain in gen_candidates: ', 1.0 * 1 / pow(2, len(P_)))
             check_consistency_, tval = check_consistency(E, P_, target)
             if check_consistency_:
                 Ac.append([P_, tuple([target, tval])])
-                print(Ac)
+                #print(Ac)
             else:
                 newF = list(set(F) - set([fi]))
                 gen_candidates(newF, P_, target, E, Ac, gmin)
@@ -85,7 +94,8 @@ def recalibrate_add(Ac, As, E, prev_covered_rows, TRows, gmin):
         gain, addl_covered_rows = calc_gain(E, prev_covered_rows, TRows, a)
         if gain >= gmin:
             prev_covered_rows = list(set(prev_covered_rows + addl_covered_rows))
-            As = As + a
+            #As = As + a
+            As.append(a)
     return As, prev_covered_rows
 
 def calc_gain(E, prev_covered_rows, TRows, a):
@@ -106,7 +116,7 @@ def calc_gain(E, prev_covered_rows, TRows, a):
 
 def check_consistency(E, P, target):
     E_local = E.copy(deep=True)
-    print(P)
+    #print(P)
     for p in P:
         attribute = p[0]
         pval = p[1]

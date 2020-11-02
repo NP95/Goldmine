@@ -92,8 +92,8 @@ def miner(features, target, rows_, rows_invalid_type, CONFIG, top_module, clks, 
     else:
         assertion_component = pmine(features, target, csv_dframe)
 
-    print(assertion_component)
-    exit(0)
+    #print(assertion_component)
+    
     if not assertion_component:
         print_info('Mining failed for target: ' + target)
         return
