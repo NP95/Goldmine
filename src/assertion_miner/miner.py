@@ -10,7 +10,8 @@ from configuration import make_directory
 from decision_tree import decision_tree as dtmine
 from best_gain_decision_forest import best_gain_decision_forest as bgdfmine
 from prism import prism as pmine
-from coverage_miner import coverage_miner as covminer
+from coverage_miner import coverage_miner as covmine
+from counter_example_guided_miner import counter_example_guided_miner as cexmine
 
 
 def analyze_manual_assertions(features, target, CONFIG, top_module, clks, rsts, \
@@ -87,8 +88,8 @@ def miner(features, target, rows_, rows_invalid_type, CONFIG, top_module, clks, 
     elif engine == 'bgdf':
         bgdfmine(features, target, csv_dframe, [], assertion_component)
         assertion_component = set_containment(assertion_component)
-    elif engine == 'covminer':
-        assertion_component = covminer(features, target, csv_dframe, 0.5, 0.1, 0.95)
+    elif engine == 'coverage':
+        assertion_component = covmine(features, target, csv_dframe, 0.5, 0.1, 0.95)
     else:
         assertion_component = pmine(features, target, csv_dframe)
 
