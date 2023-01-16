@@ -631,8 +631,8 @@ def construct_fused_CDFG(CDFGS, Ports):
         cdfg_type = CDFG.nodes[root_node]['typ']
         
         if cdfg_type == 'Assign':
-            use_var = CDFG.node[root_node]['use_var']
-            def_var = CDFG.node[root_node]['def_var']
+            use_var = CDFG.nodes[root_node]['use_var']
+            def_var = CDFG.nodes[root_node]['def_var']
 
             for uvar in use_var:
                 if uvar not in list(use_var_proc.keys()):
@@ -923,7 +923,7 @@ def get_var_def_chain(CDFGS, PathSets, Params):
                     #print cond
                 #print '\n' * 2
         elif cdfg_type == 'Assign':
-            ast = CDFG.nodes[CDFG.nodes()[0]]['ast']
+            ast = CDFG.nodes[list(CDFG.nodes())[0]]['ast']
             def_var = get_lvalue(ast.left)
             d_dep = []
             get_rhs_cond_nodes(ast.right, d_dep)
@@ -1518,10 +1518,10 @@ def Linking(ELABORATE_INFO, top_module):
             ##### This is a hack to tackle the labels. Cant think a better one now.
             ##### FIX it later if possible
             for node_ in fused_CDFG.nodes():
-                l = fused_CDFG.node[node_]['label']
+                l = fused_CDFG.nodes[node_]['label']
                 l_split = l.split('\n')
                 l_split[0] = node_
-                fused_CDFG.node[node_]['label'] = '\n'.join(l_split)
+                fused_CDFG.nodes[node_]['label'] = '\n'.join(l_split)
             ##### This is a hack to tackle the labels. Cant think a better one now.
             ##### FIX it later if possible
             del mapping
