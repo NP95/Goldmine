@@ -86,8 +86,8 @@ GoldMine Configuration File goldmine.cfg explanation
         GoldMine will label the assertions it generates as "unverified" if IFV
         is not available.
 
-    Verific [INVIO](https://www.verific.com/products/invio/) Library for SystemVerilog support (optional)
-        GoldMine uses Veific INVIO Python Library to parse SystemVerilog designs
+    Verific (https://www.verific.com/) Library for SystemVerilog support (optional)
+        GoldMine uses Veific Verific Python Library to parse SystemVerilog designs
         for static analysis purposes. This has been made possible via a gracious research
         donation by Verific.
 
