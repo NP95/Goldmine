@@ -1,0 +1,3 @@
+[submodule "systemverilog/Ibex"]
+	path = systemverilog/Ibex
+	url = https://github.com/lowRISC/ibex.git
