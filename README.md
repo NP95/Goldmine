@@ -87,7 +87,7 @@ GoldMine Configuration File goldmine.cfg explanation
         is not available.
 
     Verific (https://www.verific.com/) Library for SystemVerilog support (optional)
-        GoldMine uses Veific Verific Python Library to parse SystemVerilog designs
+        GoldMine uses Verific Python Library to parse SystemVerilog designs
         for static analysis purposes. This has been made possible via a gracious research
         donation by Verific.
 
